@@ -6,11 +6,16 @@
       novalidate
       ng-submit="">
   <fieldset class="form-group">
+    <label name="title">Give your post a title!</label>
+    <input type="text"
+           placeholder="Title goes here."
+           name="title" /><br /><br />
     <label name="introduce">Introduce the doc that you didn't like.</label>
     <textarea type="text"
+              name="synopsis"
               class="form-control"
               rows="5"
-              placeholder="Example input"></textarea>
+              placeholder="A SHORT synopsis. Please."></textarea>
     <button type="submit" name="button">Submit</button>
   </fieldset>
 </form>
