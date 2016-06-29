@@ -2,9 +2,23 @@
 (function(){
 
 class CreateComponent {
-  constructor() {
-    this.message = 'Hello';
+  constructor($http) {
+    this.$http = $http;
+    this.message = 'Wat!';
   }
+
+  // do $http request here. Should automatically use the api endpoint
+  submit() {
+    if (this.post) {
+      console.log(this.post)
+      this.$http.post('/api/create', {
+        title: this.post.title
+      });
+      this.post.title = '';
+    }
+  }
+
+
 }
 
 angular.module('docExtrapolationApp')

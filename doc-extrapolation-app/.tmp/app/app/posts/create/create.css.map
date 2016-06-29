@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"app/posts/create/create.css","sourceRoot":"/source/","sourcesContent":[]}
+{"version":3,"sources":["create.css"],"names":[],"mappings":"AAAA,cAAc,eAAe,CAAC","file":"app/posts/create/create.css","sourcesContent":[".adjTopMargin{margin-top:10px}"],"sourceRoot":"/source/"}
