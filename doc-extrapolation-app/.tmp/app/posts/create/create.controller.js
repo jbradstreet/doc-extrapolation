@@ -21,8 +21,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function submit() {
         if (this.post) {
           console.log(this.post);
-          this.$http.post('/api/create', {
-            title: this.post.title
+          this.$http.post('/api/posts', {
+            // below are values I want to pass into the db
+            title: this.post.title,
+            synopsis: this.post.synopsis
           });
           this.post.title = '';
         }
