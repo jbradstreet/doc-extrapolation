@@ -5,20 +5,22 @@ class ShowPostComponent {
   constructor($http) {
     this.$http = $http;
     this.message = "You made it!";
+    // line 9 has all objects in the array
+    this.singlePost = [];
   }
 
   $onInit() {
-    this.$http.get('/api/posts')
+    this.$http.get('/api/posts/')
       .then(response => {
-        this.allPosts = response.data;
-        console.log(this.allPosts);
+        this.singlePost = response.data;
+        console.log(this.singlePost);
       });
   }
 
 }
 
 angular.module('docExtrapolationApp')
-  .component('showPost', {
+  .component('showpost', {
     templateUrl: 'app/posts/showpost.html',
     controller: ShowPostComponent
   });

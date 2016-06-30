@@ -3,7 +3,7 @@
 angular.module('docExtrapolationApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/posts/:id', {
+      .when('/posts/:postID', {
         template: '<showpost></showpost>'
       });
   });

@@ -11,6 +11,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       this.$http = $http;
       this.message = "You made it!";
+      // line 9 has all objects in the array
+      this.singlePost = [];
     }
 
     _createClass(ShowPostComponent, [{
@@ -18,9 +20,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function $onInit() {
         var _this = this;
 
-        this.$http.get('/api/posts').then(function (response) {
-          _this.allPosts = response.data;
-          console.log(_this.allPosts);
+        this.$http.get('/api/posts/').then(function (response) {
+          _this.singlePost = response.data;
+          console.log(_this.singlePost);
         });
       }
     }]);
@@ -28,7 +30,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     return ShowPostComponent;
   }();
 
-  angular.module('docExtrapolationApp').component('showPost', {
+  angular.module('docExtrapolationApp').component('showpost', {
     templateUrl: 'app/posts/showpost.html',
     controller: ShowPostComponent
   });

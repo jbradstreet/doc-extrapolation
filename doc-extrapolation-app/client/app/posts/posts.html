@@ -10,7 +10,9 @@
           <img class='col-md-3 resize'
                ng-src='{{ post.image_1 }}'
                />
-            <p class='col-md-4 adjContent'>{{ post.title }}</p>
+            <h4 class='col-md-4 adjContent'>
+              <a href='/posts/{{ post._id }}'>{{ post.title }}</a>
+            </h4>
             <p class='col-md-4 adjContent'>Author: Add functionality later.</p>
             <p class='col-md-4 adjContent'>{{ post.synopsis }}</p>
             <p class='col-md-4 adjContent'>{{ post.created_at | date:'medium' }}</p>

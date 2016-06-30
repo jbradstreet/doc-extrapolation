@@ -1,5 +1,5 @@
 /**
- * Create model events
+ * Post model events
  */
 
 'use strict';
@@ -10,16 +10,16 @@ Object.defineProperty(exports, "__esModule", {
 
 var _events = require('events');
 
-var _create = require('./create.model');
+var _post = require('./post.model');
 
-var _create2 = _interopRequireDefault(_create);
+var _post2 = _interopRequireDefault(_post);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CreateEvents = new _events.EventEmitter();
+var PostEvents = new _events.EventEmitter();
 
 // Set max event listeners (0 == unlimited)
-CreateEvents.setMaxListeners(0);
+PostEvents.setMaxListeners(0);
 
 // Model events
 var events = {
@@ -30,15 +30,15 @@ var events = {
 // Register the event emitter to the model events
 for (var e in events) {
   var event = events[e];
-  _create2.default.schema.post(e, emitEvent(event));
+  _post2.default.schema.post(e, emitEvent(event));
 }
 
 function emitEvent(event) {
   return function (doc) {
-    CreateEvents.emit(event + ':' + doc._id, doc);
-    CreateEvents.emit(event, doc);
+    PostEvents.emit(event + ':' + doc._id, doc);
+    PostEvents.emit(event, doc);
   };
 }
 
-exports.default = CreateEvents;
-//# sourceMappingURL=create.events.js.map
+exports.default = PostEvents;
+//# sourceMappingURL=post.events.js.map

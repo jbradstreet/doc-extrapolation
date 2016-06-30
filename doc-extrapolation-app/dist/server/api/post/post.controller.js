@@ -1,10 +1,10 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /api/creates              ->  index
- * POST    /api/creates              ->  create
- * GET     /api/creates/:id          ->  show
- * PUT     /api/creates/:id          ->  update
- * DELETE  /api/creates/:id          ->  destroy
+ * GET     /api/posts              ->  index
+ * POST    /api/posts              ->  create
+ * GET     /api/posts/:id          ->  show
+ * PUT     /api/posts/:id          ->  update
+ * DELETE  /api/posts/:id          ->  destroy
  */
 
 'use strict';
@@ -22,9 +22,9 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _create = require('./create.model');
+var _post = require('./post.model');
 
-var _create2 = _interopRequireDefault(_create);
+var _post2 = _interopRequireDefault(_post);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -73,31 +73,31 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets a list of Creates
+// Gets a list of Posts
 function index(req, res) {
-  return _create2.default.find().exec().then(respondWithResult(res)).catch(handleError(res));
+  return _post2.default.find().exec().then(respondWithResult(res)).catch(handleError(res));
 }
 
-// Gets a single Create from the DB
+// Gets a single Post from the DB
 function show(req, res) {
-  return _create2.default.findById(req.params.id).exec().then(handleEntityNotFound(res)).then(respondWithResult(res)).catch(handleError(res));
+  return _post2.default.findById(req.params.id).exec().then(handleEntityNotFound(res)).then(respondWithResult(res)).catch(handleError(res));
 }
 
-// Creates a new Create in the DB
+// Creates a new Post in the DB
 function create(req, res) {
-  return _create2.default.create(req.body).then(respondWithResult(res, 201)).catch(handleError(res));
+  return _post2.default.create(req.body).then(respondWithResult(res, 201)).catch(handleError(res));
 }
 
-// Updates an existing Create in the DB
+// Updates an existing Post in the DB
 function update(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
-  return _create2.default.findById(req.params.id).exec().then(handleEntityNotFound(res)).then(saveUpdates(req.body)).then(respondWithResult(res)).catch(handleError(res));
+  return _post2.default.findById(req.params.id).exec().then(handleEntityNotFound(res)).then(saveUpdates(req.body)).then(respondWithResult(res)).catch(handleError(res));
 }
 
-// Deletes a Create from the DB
+// Deletes a Post from the DB
 function destroy(req, res) {
-  return _create2.default.findById(req.params.id).exec().then(handleEntityNotFound(res)).then(removeEntity(res)).catch(handleError(res));
+  return _post2.default.findById(req.params.id).exec().then(handleEntityNotFound(res)).then(removeEntity(res)).catch(handleError(res));
 }
-//# sourceMappingURL=create.controller.js.map
+//# sourceMappingURL=post.controller.js.map

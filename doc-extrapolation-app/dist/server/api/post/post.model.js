@@ -10,7 +10,7 @@ var _mongoose2 = _interopRequireDefault(_mongoose);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CreateSchema = new _mongoose2.default.Schema({
+var PostSchema = new _mongoose2.default.Schema({
   title: String,
   author: {
     type: _mongoose2.default.Schema.Types.ObjectId,
@@ -19,6 +19,8 @@ var CreateSchema = new _mongoose2.default.Schema({
   synopsis: String,
   image_1: String,
   image_2: String,
+  caption_1: String,
+  caption_2: String,
   created_at: {
     type: Date,
     default: Date.now },
@@ -27,5 +29,5 @@ var CreateSchema = new _mongoose2.default.Schema({
   published: Boolean
 });
 
-exports.default = _mongoose2.default.model('Create', CreateSchema);
-//# sourceMappingURL=create.model.js.map
+exports.default = _mongoose2.default.model('Post', PostSchema);
+//# sourceMappingURL=post.model.js.map

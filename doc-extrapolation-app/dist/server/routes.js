@@ -10,7 +10,7 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function (app) {
   // Insert routes below
-  app.use('/api/create', require('./api/create'));
+  app.use('/api/posts', require('./api/post'));
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
 
