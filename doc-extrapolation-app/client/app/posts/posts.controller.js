@@ -2,9 +2,20 @@
 (function(){
 
 class PostsComponent {
-  constructor() {
+  constructor($http) {
     this.message = 'Hello';
+    this.$http = $http;
+    this.allPosts = [];
   }
+
+  $onInit() {
+    this.$http.get('/api/posts')
+      .then(response => {
+        this.allPosts = response.data;
+        console.log(this.allPosts);
+      });
+  }
+
 }
 
 angular.module('docExtrapolationApp')
