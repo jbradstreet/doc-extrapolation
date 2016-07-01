@@ -6,11 +6,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (function () {
   var ShowPostComponent = function () {
-    function ShowPostComponent($http, $routeParams) {
+    function ShowPostComponent($http, $routeParams, $location) {
       _classCallCheck(this, ShowPostComponent);
 
       this.$http = $http;
       this.$routeParams = $routeParams;
+      this.$location = $location;
       this.message = "You made it!";
       // line 9 has all objects in the array
       this.singlePost = [];
@@ -28,7 +29,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }, {
       key: 'edit',
-      value: function edit() {}
+      value: function edit() {
+        console.log("clicked button");
+        this.$location.path('/post/' + this.$routeParams.postID);
+      }
     }]);
 
     return ShowPostComponent;

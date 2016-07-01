@@ -2,9 +2,10 @@
 (function(){
 
 class EditComponent {
-  constructor($http, $routeParams) {
+  constructor($http, $routeParams, $location) {
     this.$http = $http;
     this.$routeParams = $routeParams;
+    this.$location = $location;
     this.message = "You made it!";
     // line 9 has all objects in the array
     this.singlePost = [];
@@ -36,8 +37,11 @@ class EditComponent {
   }
 
   delete() {
-    console.log("delete clicked")
-    this.$http.delete('/api/posts/' + post._id);
+    if (this.post) {
+      console.log("delete clicked");
+      this.$http.delete('/api/posts/' + this.$routeParams.postID);
+      this.$location.path('/users');
+    }
   }
 
 }

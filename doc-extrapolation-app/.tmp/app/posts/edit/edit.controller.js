@@ -6,11 +6,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (function () {
   var EditComponent = function () {
-    function EditComponent($http, $routeParams) {
+    function EditComponent($http, $routeParams, $location) {
       _classCallCheck(this, EditComponent);
 
       this.$http = $http;
       this.$routeParams = $routeParams;
+      this.$location = $location;
       this.message = "You made it!";
       // line 9 has all objects in the array
       this.singlePost = [];
@@ -44,6 +45,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this2.$location.path('/posts/' + _this2.$routeParams.postID);
           });
         }
+      }
+    }, {
+      key: 'delete',
+      value: function _delete() {
+        var _this3 = this;
+
+        console.log("delete clicked");
+        this.$http.delete('/api/posts/' + this.$routeParams.postID).then(function () {
+          _this3.$location.path('/users');
+        });
       }
     }]);
 
