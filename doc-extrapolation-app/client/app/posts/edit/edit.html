@@ -30,9 +30,14 @@
            placeholder="A SHORT caption."
            ng-model='$ctrl.singlePost.caption_1'/>
   </fieldset>
-    <button type="submit"
-            class="btn btn-success adjTopMargin"
-            ng-click="$ctrl.submit()">
-            Submit
-    </button>
+    <a type="button"
+       class="btn btn-success adjTopMargin"
+       ng-click="$ctrl.save()">
+       Submit
+    </a>
+    <a type="button"
+       class="btn btn-danger adjTopMargin"
+       ng-click="$ctrl.delete()">
+       Delete
+    </a>
 </form>

@@ -18,6 +18,28 @@ class EditComponent {
       });
   }
 
+  save() {
+    if (this.post) {
+      console.log("button works");
+      // post.$update();
+      this.$http.put('/api/posts' + this.$routeParams.postID, {
+        // below are values I want to pass into the db
+        title: this.post.title,
+        synopsis: this.post.synopsis,
+        image_1: this.post.image_1,
+        caption_1: this.post.caption_1
+      })
+      .then(() => {
+        this.$location.path('/posts/' + this.$routeParams.postID);
+      });
+    }
+  }
+
+  delete() {
+    console.log("delete clicked")
+    this.$http.delete('/api/posts/' + post._id);
+  }
+
 }
 
 angular.module('docExtrapolationApp')

@@ -26,6 +26,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           console.log(_this.singlePost);
         });
       }
+    }, {
+      key: 'save',
+      value: function save() {
+        var _this2 = this;
+
+        if (this.post) {
+          console.log("button works");
+          // post.$update();
+          this.$http.put('/api/posts' + this.$routeParams.postID, {
+            // below are values I want to pass into the db
+            title: this.post.title,
+            synopsis: this.post.synopsis,
+            image_1: this.post.image_1,
+            caption_1: this.post.caption_1
+          }).then(function () {
+            _this2.$location.path('/posts/' + _this2.$routeParams.postID);
+          });
+        }
+      }
     }]);
 
     return EditComponent;

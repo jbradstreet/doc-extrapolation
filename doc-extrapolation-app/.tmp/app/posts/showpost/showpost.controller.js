@@ -26,6 +26,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           console.log(_this.singlePost);
         });
       }
+    }, {
+      key: 'edit',
+      value: function edit() {}
     }]);
 
     return ShowPostComponent;
