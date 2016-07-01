@@ -32,7 +32,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   }();
 
   angular.module('docExtrapolationApp').component('showpost', {
-    templateUrl: 'app/posts/showpost.html',
+    templateUrl: 'app/posts/showpost/showpost.html',
     controller: ShowPostComponent
   });
 })();
