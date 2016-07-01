@@ -1,20 +1,21 @@
 
-{{ $ctrl.singlePost }}
-
 <div class='container'>
       <div class='row'>
         <section class='col-md-10 col-md-offset-1 well'>
 
             <p class='col-md-4 adjContent'>
-              {{ $ctrl.message }}
+              {{ $ctrl.singlePost.title }}
             </p>
             <p class='col-md-4 adjContent'>
               Author: Add functionality later.
             </p>
             <p class='col-md-4 adjContent'>
-              {{ $ctrl.message }}
+              {{ $ctrl.singlePost.synopsis }}
             </p>
+            <img class='col-md-3 resize'
+                 ng-src='{{ $ctrl.singlePost.image_1 }}'
+                 />
             <p class='col-md-4 adjContent'>
-              {{ $ctrl.message }}
+              {{ $ctrl.singlePost.caption_1 }}
             </p>
 </div>
