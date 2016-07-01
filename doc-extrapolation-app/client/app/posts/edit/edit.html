@@ -1,3 +1,38 @@
 <h2>This is the Edit Post page!</h2>
 
 {{ $ctrl.message }}
+
+<form name="post_form"
+      novalidate >
+  <fieldset class="form-group">
+    <label name="title">Give your post a title!</label><br />
+    <input type="text"
+           placeholder="Title goes here."
+           name="title"
+           ng-model='$ctrl.singlePost.title' /><br /><br />
+    <label name="introduce">Introduce the doc that you didn't like.</label>
+    <textarea type="text"
+              name="synopsis"
+              class="form-control"
+              rows="5"
+              placeholder="A SHORT synopsis. Please."
+              ng-model='$ctrl.singlePost.synopsis'/><br /><br />
+    <label name="image">Screenshot goes here!</label><br />
+    <input type="url"
+           placeholder= "Use url for now."
+           name="image_1"
+           ng-model='$ctrl.singlePost.image_1' /><br /><br />
+    <label name="caption">Write caption for screenshot/image.</label>
+    <textarea type="text"
+           name="caption_1"
+           class="form-control"
+           rows="3"
+           placeholder="A SHORT caption."
+           ng-model='$ctrl.singlePost.caption_1'/>
+  </fieldset>
+    <button type="submit"
+            class="btn btn-success adjTopMargin"
+            ng-click="$ctrl.submit()">
+            Submit
+    </button>
+</form>
