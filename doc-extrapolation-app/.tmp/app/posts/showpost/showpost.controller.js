@@ -30,8 +30,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       key: 'edit',
       value: function edit() {
-        console.log("clicked button");
-        this.$location.path('/post/' + this.$routeParams.postID);
+        // console.log(this.$routeParams.postID);
+        this.$location.path('/post/this.$routeParams.postID }}/edit');
       }
     }]);
 

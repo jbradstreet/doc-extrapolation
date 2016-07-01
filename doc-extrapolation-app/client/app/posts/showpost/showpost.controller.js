@@ -19,11 +19,6 @@ class ShowPostComponent {
       });
   }
 
-  edit() {
-    console.log("clicked button")
-    this.$location.path('/post/' + this.$routeParams.postID)
-  }
-
 }
 
 angular.module('docExtrapolationApp')

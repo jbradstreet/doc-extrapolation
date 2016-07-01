@@ -49,12 +49,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       key: 'delete',
       value: function _delete() {
-        var _this3 = this;
-
-        console.log("delete clicked");
-        this.$http.delete('/api/posts/' + this.$routeParams.postID).then(function () {
-          _this3.$location.path('/users');
-        });
+        if (this.post) {
+          console.log("delete clicked");
+          this.$http.delete('/api/posts/' + this.$routeParams.postID);
+          this.$location.path('/users');
+        }
       }
     }]);
 
