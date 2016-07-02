@@ -19,26 +19,25 @@ class EditComponent {
       });
   }
 
-  save() {
-    if (this.post) {
-      console.log("button works");
+  update() {
+    if (this.singlePost) {
       // post.$update();
-      this.$http.put('/api/posts' + this.$routeParams.postID, {
-        // below are values I want to pass into the db
-        title: this.post.title,
-        synopsis: this.post.synopsis,
-        image_1: this.post.image_1,
-        caption_1: this.post.caption_1
+      var postid = this.$routeParams.postID
+      this.$http.put('/api/posts/' + this.$routeParams.postID, {
+        title: this.singlePost.title,
+        synopsis: this.singlePost.synopsis,
+        image_1: this.singlePost.image_1,
+        caption_1: this.singlePost.caption_1
       })
-      .then(() => {
-        this.$location.path('/posts/' + this.$routeParams.postID);
+      .then((result) => {
+        console.log(result)
+        this.$location.path('/posts/' + postid);
       });
     }
   }
 
   delete() {
     if (this.post) {
-      console.log("delete clicked");
       this.$http.delete('/api/posts/' + this.$routeParams.postID);
       this.$location.path('/users');
     }

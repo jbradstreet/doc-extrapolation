@@ -27,12 +27,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           console.log(_this.singlePost);
         });
       }
-    }, {
-      key: 'edit',
-      value: function edit() {
-        // console.log(this.$routeParams.postID);
-        this.$location.path('/post/this.$routeParams.postID }}/edit');
-      }
     }]);
 
     return ShowPostComponent;

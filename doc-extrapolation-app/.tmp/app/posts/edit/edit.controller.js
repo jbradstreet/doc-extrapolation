@@ -28,21 +28,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         });
       }
     }, {
-      key: 'save',
-      value: function save() {
+      key: 'update',
+      value: function update() {
         var _this2 = this;
 
-        if (this.post) {
-          console.log("button works");
+        if (this.singlePost) {
           // post.$update();
-          this.$http.put('/api/posts' + this.$routeParams.postID, {
-            // below are values I want to pass into the db
-            title: this.post.title,
-            synopsis: this.post.synopsis,
-            image_1: this.post.image_1,
-            caption_1: this.post.caption_1
-          }).then(function () {
-            _this2.$location.path('/posts/' + _this2.$routeParams.postID);
+          var postid = this.$routeParams.postID;
+          this.$http.put('/api/posts/' + this.$routeParams.postID, {
+            title: this.singlePost.title,
+            synopsis: this.singlePost.synopsis,
+            image_1: this.singlePost.image_1,
+            caption_1: this.singlePost.caption_1
+          }).then(function (result) {
+            console.log(result);
+            _this2.$location.path('/posts/' + postid);
           });
         }
       }
@@ -50,7 +50,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: 'delete',
       value: function _delete() {
         if (this.post) {
-          console.log("delete clicked");
           this.$http.delete('/api/posts/' + this.$routeParams.postID);
           this.$location.path('/users');
         }
