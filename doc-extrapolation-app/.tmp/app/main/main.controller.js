@@ -11,6 +11,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       this.$http = $http;
       this.awesomeThings = [];
+      this.myPattern = "../../assets/images/ideawoman.jpg";
     }
 
     _createClass(MainController, [{

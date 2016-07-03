@@ -7,6 +7,7 @@
     constructor($http) {
       this.$http = $http;
       this.awesomeThings = [];
+      this.myPattern = "../../assets/images/ideawoman.jpg";
     }
 
     $onInit() {
