@@ -18,13 +18,23 @@
   margin-top: 100px;
 }
 
-.hero-unit {
+.hero-unit1 {
   position: relative;
   padding: 30px 15px;
-  color: #F5F5F5;
+  color: #030303;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #4393B9;
+  background: #c9c9c9;
+}
+
+.hero-unit2 {
+  position: relative;
+  padding: 30px 15px;
+  color: #030303;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: url('../../assets/images/ideawoman.jpg');
+  background-size: 100%;
 }
 
 .navbar-text {
