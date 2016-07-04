@@ -31,10 +31,10 @@
                   class="form-control"
                   rows="3"
                   placeholder="A SHORT caption."
-                  ng-model='$ctrl.post.caption_1'/>
+                  ng-model='$ctrl.post.caption_1'/><br /><br />
 
 
-        <div ng-hide="$ctrl.reveal()">
+        <div ng-hide="$ctrl.hiddenfields">
           <label name="image">Screenshot goes here!</label><br />
           <input type="url"
                  placeholder= "Use url for now."
@@ -46,7 +46,52 @@
                     class="form-control"
                     rows="3"
                     placeholder="A SHORT caption."
-                    ng-model='$ctrl.post.caption_2'/>
+                    ng-model='$ctrl.post.caption_2'/><br /><br />
+        </div>
+
+        <div ng-hide="$ctrl.hiddenfields">
+          <label name="image">Screenshot goes here!</label><br />
+          <input type="url"
+                 placeholder= "Use url for now."
+                 name="image_3"
+                 ng-model='$ctrl.post.image_3' /><br /><br />
+          <label name="caption">Write caption for screenshot/image.</label>
+          <textarea type="text"
+                    name="caption_3"
+                    class="form-control"
+                    rows="3"
+                    placeholder="A SHORT caption."
+                    ng-model='$ctrl.post.caption_3'/><br /><br />
+        </div>
+
+        <div ng-hide="$ctrl.hiddenfields">
+          <label name="image">Screenshot goes here!</label><br />
+          <input type="url"
+                 placeholder= "Use url for now."
+                 name="image_4"
+                 ng-model='$ctrl.post.image_4' /><br /><br />
+          <label name="caption">Write caption for screenshot/image.</label>
+          <textarea type="text"
+                    name="caption_4"
+                    class="form-control"
+                    rows="3"
+                    placeholder="A SHORT caption."
+                    ng-model='$ctrl.post.caption_4'/><br /><br />
+        </div>
+
+        <div ng-hide="$ctrl.hiddenfields">
+          <label name="image">Screenshot goes here!</label><br />
+          <input type="url"
+                 placeholder= "Use url for now."
+                 name="image_5"
+                 ng-model='$ctrl.post.image_5' /><br /><br />
+          <label name="caption">Write caption for screenshot/image.</label>
+          <textarea type="text"
+                    name="caption_5"
+                    class="form-control"
+                    rows="3"
+                    placeholder="A SHORT caption."
+                    ng-model='$ctrl.post.caption_5'/><br /><br />
         </div>
 
         <button type="submit"

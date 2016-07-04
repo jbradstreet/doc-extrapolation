@@ -12,12 +12,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.$http = $http;
       this.$location = $location;
       this.message = 'Wat!';
+      this.hiddenfields = true;
     }
 
     _createClass(CreateComponent, [{
       key: 'reveal',
       value: function reveal() {
-        return true;
+        // return true;
+        this.hiddenfields = !this.hiddenfields;
       }
 
       // do $http request here. Should automatically use the api endpoint
@@ -36,7 +38,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             image_1: this.post.image_1,
             caption_1: this.post.caption_1,
             image_2: this.post.image_2,
-            caption_2: this.post.caption_2
+            caption_2: this.post.caption_2,
+            image_3: this.post.image_2,
+            caption_3: this.post.caption_2,
+            image_4: this.post.image_2,
+            caption_4: this.post.caption_2,
+            image_5: this.post.image_2,
+            caption_5: this.post.caption_2
           }).then(function (result) {
             _this.$location.path('/posts');
           });

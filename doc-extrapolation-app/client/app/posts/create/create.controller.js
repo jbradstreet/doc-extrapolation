@@ -6,10 +6,12 @@ class CreateComponent {
     this.$http = $http;
     this.$location = $location;
     this.message = 'Wat!';
+    this.hiddenfields = true;
   }
 
   reveal() {
-    return true;
+    // return true;
+    this.hiddenfields = !this.hiddenfields;
   }
 
 
@@ -24,7 +26,13 @@ class CreateComponent {
         image_1: this.post.image_1,
         caption_1: this.post.caption_1,
         image_2: this.post.image_2,
-        caption_2: this.post.caption_2
+        caption_2: this.post.caption_2,
+        image_3: this.post.image_2,
+        caption_3: this.post.caption_2,
+        image_4: this.post.image_2,
+        caption_4: this.post.caption_2,
+        image_5: this.post.image_2,
+        caption_5: this.post.caption_2
       })
       .then((result) => {
         this.$location.path('/posts');
