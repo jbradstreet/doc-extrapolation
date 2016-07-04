@@ -28,12 +28,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         });
       }
     }, {
+      key: 'hideextra',
+      value: function hideextra() {
+        if (!this.singlePost.image_2) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }, {
       key: 'update',
       value: function update() {
         var _this2 = this;
 
         if (this.singlePost) {
-          // post.$update();
           var postid = this.$routeParams.postID;
           this.$http.put('/api/posts/' + this.$routeParams.postID, {
             title: this.singlePost.title,
@@ -49,9 +57,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       key: 'delete',
       value: function _delete() {
-        if (this.post) {
-          this.$http.delete('/api/posts/' + this.$routeParams.postID);
-          this.$location.path('/users');
+        var _this3 = this;
+
+        if (this.singlePost) {
+          var postid = this.$routeParams.postID;
+          this.$http.delete('/api/posts/' + this.$routeParams.postID, {
+            title: this.singlePost.title,
+            synopsis: this.singlePost.synopsis,
+            image_1: this.singlePost.image_1,
+            caption_1: this.singlePost.caption_1
+          }).then(function (result) {
+            console.log(result);
+            _this3.$location.path('/posts/');
+          });
         }
       }
     }]);

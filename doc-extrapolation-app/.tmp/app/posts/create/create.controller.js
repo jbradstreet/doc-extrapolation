@@ -29,7 +29,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             title: this.post.title,
             synopsis: this.post.synopsis,
             image_1: this.post.image_1,
-            caption_1: this.post.caption_1
+            caption_1: this.post.caption_1,
+            image_2: this.post.image_2,
+            caption_2: this.post.caption_2
           }).then(function (result) {
             _this.$location.path('/posts');
           });

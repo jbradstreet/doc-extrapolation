@@ -17,7 +17,9 @@ class CreateComponent {
         title: this.post.title,
         synopsis: this.post.synopsis,
         image_1: this.post.image_1,
-        caption_1: this.post.caption_1
+        caption_1: this.post.caption_1,
+        image_2: this.post.image_2,
+        caption_2: this.post.caption_2
       })
       .then((result) => {
         this.$location.path('/posts');
