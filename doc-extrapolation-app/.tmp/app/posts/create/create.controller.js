@@ -6,10 +6,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (function () {
   var CreateComponent = function () {
-    function CreateComponent($http) {
+    function CreateComponent($http, $location) {
       _classCallCheck(this, CreateComponent);
 
       this.$http = $http;
+      this.$location = $location;
       this.message = 'Wat!';
     }
 
@@ -19,6 +20,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     _createClass(CreateComponent, [{
       key: 'submit',
       value: function submit() {
+        var _this = this;
+
         if (this.post) {
           console.log(this.post);
           this.$http.post('/api/posts', {
@@ -27,8 +30,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             synopsis: this.post.synopsis,
             image_1: this.post.image_1,
             caption_1: this.post.caption_1
+          }).then(function (result) {
+            _this.$location.path('/posts');
           });
-          this.post.title = '';
+          // this.post.title = '';
         }
       }
     }]);

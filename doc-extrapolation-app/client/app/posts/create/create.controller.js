@@ -2,8 +2,9 @@
 (function(){
 
 class CreateComponent {
-  constructor($http) {
+  constructor($http, $location) {
     this.$http = $http;
+    this.$location = $location;
     this.message = 'Wat!';
   }
 
@@ -17,8 +18,11 @@ class CreateComponent {
         synopsis: this.post.synopsis,
         image_1: this.post.image_1,
         caption_1: this.post.caption_1
+      })
+      .then((result) => {
+        this.$location.path('/posts');
       });
-      this.post.title = '';
+      // this.post.title = '';
     }
   }
 
