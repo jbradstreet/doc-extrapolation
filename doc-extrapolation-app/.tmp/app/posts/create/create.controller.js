@@ -14,10 +14,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.message = 'Wat!';
     }
 
-    // do $http request here. Should automatically use the api endpoint
-
-
     _createClass(CreateComponent, [{
+      key: 'reveal',
+      value: function reveal() {
+        return true;
+      }
+
+      // do $http request here. Should automatically use the api endpoint
+
+    }, {
       key: 'submit',
       value: function submit() {
         var _this = this;

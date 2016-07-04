@@ -8,6 +8,11 @@ class CreateComponent {
     this.message = 'Wat!';
   }
 
+  reveal() {
+    return true;
+  }
+
+
   // do $http request here. Should automatically use the api endpoint
   submit() {
     if (this.post) {

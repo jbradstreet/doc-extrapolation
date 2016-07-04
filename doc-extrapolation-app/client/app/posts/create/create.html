@@ -33,18 +33,29 @@
                   placeholder="A SHORT caption."
                   ng-model='$ctrl.post.caption_1'/>
 
-        <label name="image">Screenshot goes here!</label><br />
-        <input type="url"
-               placeholder= "Use url for now."
-               name="image_2"
-               ng-model='$ctrl.post.image_2' /><br /><br />
-        <label name="caption">Write caption for screenshot/image.</label>
-        <textarea type="text"
-                  name="caption_2"
-                  class="form-control"
-                  rows="3"
-                  placeholder="A SHORT caption."
-                  ng-model='$ctrl.post.caption_2'/>          
+
+        <div ng-hide="$ctrl.reveal()">
+          <label name="image">Screenshot goes here!</label><br />
+          <input type="url"
+                 placeholder= "Use url for now."
+                 name="image_2"
+                 ng-model='$ctrl.post.image_2' /><br /><br />
+          <label name="caption">Write caption for screenshot/image.</label>
+          <textarea type="text"
+                    name="caption_2"
+                    class="form-control"
+                    rows="3"
+                    placeholder="A SHORT caption."
+                    ng-model='$ctrl.post.caption_2'/>
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary adjTopMargin"
+                ng-click="$ctrl.reveal()"
+                >
+                Give Me More Fields
+        </button><br /><br />
+
       </fieldset>
       <button type="submit"
               class="btn btn-success adjTopMargin"
