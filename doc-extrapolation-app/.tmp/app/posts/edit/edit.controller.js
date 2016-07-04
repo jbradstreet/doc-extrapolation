@@ -13,8 +13,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.$routeParams = $routeParams;
       this.$location = $location;
       this.message = "You made it!";
-      // line 9 has all objects in the array
+      // line 11 has all objects in the array
       this.singlePost = [];
+      this.hiddenfields = true;
     }
 
     _createClass(EditComponent, [{
@@ -26,6 +27,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _this.singlePost = response.data;
           console.log(_this.singlePost);
         });
+      }
+    }, {
+      key: 'reveal',
+      value: function reveal() {
+        this.hiddenfields = !this.hiddenfields;
       }
     }, {
       key: 'hideextra',
@@ -47,7 +53,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             title: this.singlePost.title,
             synopsis: this.singlePost.synopsis,
             image_1: this.singlePost.image_1,
-            caption_1: this.singlePost.caption_1
+            caption_1: this.singlePost.caption_1,
+            image_2: this.singlePost.image_2,
+            caption_2: this.singlePost.caption_2,
+            image_3: this.singlePost.image_3,
+            caption_3: this.singlePost.caption_3,
+            image_4: this.singlePost.image_4,
+            caption_4: this.singlePost.caption_4,
+            image_5: this.singlePost.image_5,
+            caption_5: this.singlePost.caption_5
+          }).then(function (result) {
+            console.log(result);
+            _this2.$location.path('/posts/' + postid);
+          });
+        } else if (!this.singlePost) {
+          this.$http.post('api/posts/' + this.$routeParams.postID, {
+            image_2: this.singlePost.image_2,
+            caption_2: this.singlePost.caption_2,
+            image_3: this.singlePost.image_3,
+            caption_3: this.singlePost.caption_3,
+            image_4: this.singlePost.image_4,
+            caption_4: this.singlePost.caption_4,
+            image_5: this.singlePost.image_5,
+            caption_5: this.singlePost.caption_5
           }).then(function (result) {
             console.log(result);
             _this2.$location.path('/posts/' + postid);

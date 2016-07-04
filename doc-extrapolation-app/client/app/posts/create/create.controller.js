@@ -27,12 +27,12 @@ class CreateComponent {
         caption_1: this.post.caption_1,
         image_2: this.post.image_2,
         caption_2: this.post.caption_2,
-        image_3: this.post.image_2,
-        caption_3: this.post.caption_2,
-        image_4: this.post.image_2,
-        caption_4: this.post.caption_2,
-        image_5: this.post.image_2,
-        caption_5: this.post.caption_2
+        image_3: this.post.image_3,
+        caption_3: this.post.caption_3,
+        image_4: this.post.image_4,
+        caption_4: this.post.caption_4,
+        image_5: this.post.image_5,
+        caption_5: this.post.caption_5
       })
       .then((result) => {
         this.$location.path('/posts');
