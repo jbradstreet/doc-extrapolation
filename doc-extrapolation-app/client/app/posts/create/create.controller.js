@@ -2,11 +2,12 @@
 (function(){
 
 class CreateComponent {
-  constructor($http, $location) {
+  constructor($http, $location, Auth) {
     this.$http = $http;
     this.$location = $location;
     this.message = 'Wat!';
     this.hiddenfields = true;
+    this.getCurrentUser = Auth.getCurrentUser;
   }
 
   reveal() {
@@ -19,9 +20,11 @@ class CreateComponent {
   submit() {
     if (this.post) {
       console.log(this.post);
+      console.log(this.getCurrentUser);
       this.$http.post('/api/posts', {
         // below are values I want to pass into the db
         title: this.post.title,
+        author: this.getCurrentUser,
         synopsis: this.post.synopsis,
         image_1: this.post.image_1,
         caption_1: this.post.caption_1,

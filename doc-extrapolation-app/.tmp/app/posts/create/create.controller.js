@@ -6,13 +6,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (function () {
   var CreateComponent = function () {
-    function CreateComponent($http, $location) {
+    function CreateComponent($http, $location, Auth) {
       _classCallCheck(this, CreateComponent);
 
       this.$http = $http;
       this.$location = $location;
       this.message = 'Wat!';
       this.hiddenfields = true;
+      this.getCurrentUser = Auth.getCurrentUser;
     }
 
     _createClass(CreateComponent, [{
@@ -31,9 +32,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         if (this.post) {
           console.log(this.post);
+          console.log(this.getCurrentUser);
           this.$http.post('/api/posts', {
             // below are values I want to pass into the db
             title: this.post.title,
+            author: this.getCurrentUser,
             synopsis: this.post.synopsis,
             image_1: this.post.image_1,
             caption_1: this.post.caption_1,
