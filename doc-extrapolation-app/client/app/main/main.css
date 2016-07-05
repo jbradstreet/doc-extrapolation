@@ -5,6 +5,9 @@
 #banner {
   border-bottom: none;
   margin-top: -20px;
+  height: 500px;
+  background: url('../../assets/images/womankeyboard2.jpg');
+  background-size: cover;
 }
 
 #banner h1 {
