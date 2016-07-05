@@ -2,7 +2,7 @@
 (function(){
 
 class PostsComponent {
-  constructor($http) {
+  constructor($http, Auth) {
     this.message = 'Hello';
     this.$http = $http;
     this.allPosts = [];

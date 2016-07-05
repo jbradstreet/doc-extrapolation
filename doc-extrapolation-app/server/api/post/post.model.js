@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 var PostSchema = new mongoose.Schema({
   title: String,
   author: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.String,
     ref: 'User'
   },
   synopsis: String,

@@ -6,7 +6,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (function () {
   var PostsComponent = function () {
-    function PostsComponent($http) {
+    function PostsComponent($http, Auth) {
       _classCallCheck(this, PostsComponent);
 
       this.message = 'Hello';

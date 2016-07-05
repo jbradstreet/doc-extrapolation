@@ -20,11 +20,11 @@ class CreateComponent {
   submit() {
     if (this.post) {
       console.log(this.post);
-      console.log(this.getCurrentUser);
+      console.log(this.getCurrentUser().name);
       this.$http.post('/api/posts', {
         // below are values I want to pass into the db
         title: this.post.title,
-        author: this.getCurrentUser,
+        author: this.getCurrentUser().name,
         synopsis: this.post.synopsis,
         image_1: this.post.image_1,
         caption_1: this.post.caption_1,
