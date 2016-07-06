@@ -66,6 +66,7 @@ export function index(req, res) {
     .catch(handleError(res));
 }
 
+// Get an author attached to posts
 export function author(req, res) {
   return Post.find({author: req.params.author}).exec()
     .then(respondWithResult(res))
