@@ -9,6 +9,11 @@ const authTypes = ['github', 'twitter', 'facebook', 'google'];
 
 var UserSchema = new Schema({
   name: String,
+  // cannot get posts data for each author to work
+  posts: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Post'
+  }],
   email: {
     type: String,
     lowercase: true,
