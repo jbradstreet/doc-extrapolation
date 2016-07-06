@@ -3,7 +3,7 @@
 angular.module('docExtrapolationApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('posts/author/', {
+      .when('/posts/author/:author', {
         template: '<author></author>'
       });
   });

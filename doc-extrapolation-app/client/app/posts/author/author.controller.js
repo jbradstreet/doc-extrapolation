@@ -2,15 +2,16 @@
 (function(){
 
 class AuthorComponent {
-  constructor($http, $routeParams) {
-    this.message = 'Hello';
+  constructor($http, $routeParams, $location) {
     this.$http = $http;
     this.$routeParams = $routeParams;
+    this.$location = $location;
+    this.message = 'Hello';
     this.authorPosts = [];
   }
 
   $onInit() {
-    this.$http.get('/api/posts/author' + this.$routeParams.author)
+    this.$http.get('/api/posts/author' + this.$routeParams.post.author)
       .then(response => {
         this.authorPosts = response.data;
         console.log(this.authorPosts);

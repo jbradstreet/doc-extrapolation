@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('docExtrapolationApp').config(function ($routeProvider) {
-  $routeProvider.when('posts/author/', {
+  $routeProvider.when('/posts/author/:author', {
     template: '<author></author>'
   });
 });
