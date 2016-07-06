@@ -1,1 +1,1 @@
-{"version":3,"sources":["navbar.css"],"names":[],"mappings":"AAAA,KAAK,SAAS,CAAC","file":"components/navbar/navbar.css","sourcesContent":[".red{color:red}"],"sourceRoot":"/source/"}
+{"version":3,"sources":["navbar.css"],"names":[],"mappings":"AAAA,KAAK,SAAS,CAAC,MAAM,gFAAgF,cAAc,WAAW,WAAW,CAAC","file":"components/navbar/navbar.css","sourcesContent":[".red{color:red}.icon{background:url(../../assets/images/SmallDocExtrapIcon.jpg) 6px center no-repeat;display:block;width:60px;height:50px}"],"sourceRoot":"/source/"}
