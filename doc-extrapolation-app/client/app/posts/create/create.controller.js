@@ -2,17 +2,36 @@
 (function(){
 
 class CreateComponent {
-  constructor($http, $location, Auth) {
+  constructor($scope, $http, $location, Auth, filepickerService) {
     this.$http = $http;
     this.$location = $location;
+    this.getCurrentUser = Auth.getCurrentUser;
+    this.filepickerService = filepickerService;
     this.message = 'Wat!';
     this.hiddenfields = true;
-    this.getCurrentUser = Auth.getCurrentUser;
   }
 
   reveal() {
     // return true;
     this.hiddenfields = !this.hiddenfields;
+  }
+
+  upload() {
+    console.log('clicked upload!');
+    this.filepickerService.pick(
+      {
+        mimetype: 'image/*',
+        language: 'en',
+        services: ['COMPUTER','DROPBOX','GOOGLE_DRIVE','IMAGE_SEARCH', 'FACEBOOK', 'INSTAGRAM'],
+        openTo: 'IMAGE_SEARCH'
+      },
+      function(Blob){
+        console.log(JSON.stringify(Blob));
+        // this.files.push(Blob);
+        // this.post.image_1 = image;
+        // this.$apply();
+      }
+    );
   }
 
 
@@ -40,7 +59,7 @@ class CreateComponent {
       .then((result) => {
         this.$location.path('/posts');
       });
-      // this.post.title = '';
+      this.post.title = '';
     }
   }
 

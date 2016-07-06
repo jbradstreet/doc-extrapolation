@@ -6,14 +6,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (function () {
   var CreateComponent = function () {
-    function CreateComponent($http, $location, Auth) {
+    function CreateComponent($scope, $http, $location, Auth, filepickerService) {
       _classCallCheck(this, CreateComponent);
 
       this.$http = $http;
       this.$location = $location;
+      this.getCurrentUser = Auth.getCurrentUser;
+      this.filepickerService = filepickerService;
       this.message = 'Wat!';
       this.hiddenfields = true;
-      this.getCurrentUser = Auth.getCurrentUser;
     }
 
     _createClass(CreateComponent, [{
@@ -21,6 +22,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function reveal() {
         // return true;
         this.hiddenfields = !this.hiddenfields;
+      }
+    }, {
+      key: 'upload',
+      value: function upload() {
+        console.log('clicked upload!');
+        this.filepickerService.pick({
+          mimetype: 'image/*',
+          language: 'en',
+          services: ['COMPUTER', 'DROPBOX', 'GOOGLE_DRIVE', 'IMAGE_SEARCH', 'FACEBOOK', 'INSTAGRAM'],
+          openTo: 'IMAGE_SEARCH'
+        }, function (Blob) {
+          console.log(JSON.stringify(Blob));
+          // this.files.push(Blob);
+          // this.post.image_1 = image;
+          // this.$apply();
+        });
       }
 
       // do $http request here. Should automatically use the api endpoint
@@ -51,7 +68,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }).then(function (result) {
             _this.$location.path('/posts');
           });
-          // this.post.title = '';
+          this.post.title = '';
         }
       }
     }]);
