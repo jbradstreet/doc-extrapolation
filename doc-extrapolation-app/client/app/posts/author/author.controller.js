@@ -11,14 +11,12 @@ class AuthorComponent {
   }
 
   $onInit() {
-    this.$http.get('/api/posts/author' + this.$routeParams.post.author)
+    this.$http.get('/api/posts/author/' + this.$routeParams.author)
       .then(response => {
         this.authorPosts = response.data;
         console.log(this.authorPosts);
       });
   }
-
-
 
 }
 
