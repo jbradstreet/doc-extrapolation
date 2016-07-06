@@ -66,6 +66,12 @@ export function index(req, res) {
     .catch(handleError(res));
 }
 
+export function author(req, res) {
+  return Post.find({author: req.params.author}).exec()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
 // Gets a single Post from the DB
 export function show(req, res) {
   return Post.findById(req.params.id).exec()
