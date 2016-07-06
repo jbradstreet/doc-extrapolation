@@ -1,1 +1,24 @@
-<div>This is the users view.</div>
+<div>This is the ALL users view.</div>
+
+<h4> Does this work? </h4>
+<div class='container'>
+      <div class='row'>
+        <section ng-repeat="user in $ctrl.allUsers"
+                 class='col-md-10 col-md-offset-1 well adjContent'>
+
+          <!-- <img class='col-md-3 resize'
+               ng-src='{{ user.image_1 }}'
+               /> -->
+            <h4 class='col-md-4 adjContent'>
+              <a href='/users/{{ user._id }}'>
+                {{ user.name }}
+              </a>
+            </h4>
+            <p class='col-md-4 adjContent'>
+               {{ user.posts }}
+            </p>
+            <p class='col-md-4 adjContent'>
+               {{ user.email }}
+            </p>
+
+</div>

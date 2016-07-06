@@ -35,6 +35,9 @@
             ng-class="{active: nav.isActive('/posts/create')}"><a href="/posts/create">Extrapolate</a>
         </li>
         <li ng-show="nav.isLoggedIn()"
+            ng-class="{active: nav.isActive('/users/{{ user._id }}')}"><a href="/users/{{ user._id }}">My Profile</a>
+        </li>
+        <li ng-show="nav.isLoggedIn()"
             ng-class="{active: nav.isActive('/users')}"><a href="/users">Users</a>
         </li>
         <li ng-hide="nav.isLoggedIn()"
