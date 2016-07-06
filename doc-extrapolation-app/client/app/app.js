@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('docExtrapolationApp', ['docExtrapolationApp.auth', 'docExtrapolationApp.admin',
-    'docExtrapolationApp.constants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute',
-    'ui.bootstrap', 'validation.match', 'angular-filepicker', 'ngParallax'
+    'docExtrapolationApp.constants', 'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'angular-filepicker', 'ui.bootstrap', 'validation.match', 'ngParallax'
   ])
   .config(function($routeProvider, $locationProvider, filepickerProvider) {
     $routeProvider.otherwise({
