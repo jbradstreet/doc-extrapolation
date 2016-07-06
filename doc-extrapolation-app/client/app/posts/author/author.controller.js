@@ -6,7 +6,6 @@ class AuthorComponent {
     this.$http = $http;
     this.$routeParams = $routeParams;
     this.$location = $location;
-    this.message = 'Hello';
     this.authorPosts = [];
   }
 

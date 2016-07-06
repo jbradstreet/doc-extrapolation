@@ -12,7 +12,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.$http = $http;
       this.$routeParams = $routeParams;
       this.$location = $location;
-      this.message = 'Hello';
       this.authorPosts = [];
     }
 
