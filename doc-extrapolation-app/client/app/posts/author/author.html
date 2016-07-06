@@ -1,28 +1,31 @@
 <div>This is the author view.</div>
 {{ $ctrl.message }}
+{{ $ctrl.authorPosts }}
 
 <div class='container'>
-      <div class='row'>
-        <section class='col-md-10 col-md-offset-1 well'>
-
-            <p class='col-md-4 adjContent red'>
-              {{ $ctrl.authorPosts.title }}
-            </p>
-            <p class='col-md-4 adjContent'>
-              Created By: {{ $ctrl.authorPosts.author }}
-            </p>
-            <p class='col-md-4 adjContent blue'>
-              {{ $ctrl.authorPosts.synopsis }}
-            </p>
-            <img class='col-md-4 resize img-responsive'
-                 ng-src='{{ $ctrl.authorPosts.image_1 }}'
-                 />
-            <p class='col-md-4 adjContent'>
-              {{ $ctrl.authorPosts.caption_1 }}
-            </p>
-            <!-- <a type="button"
-               class="btn btn-warning adjTopMargin"
-               ng-href="/posts/{{ $ctrl.singlePost._id }}/edit">
-               Edit
-            </a> -->
+  <div class='row'>
+    <section ng-repeat="post in $ctrl.authorPosts"
+             class='col-md-10 col-md-offset-1 well adjContent'>
+      <img class='col-md-3 resize'
+           ng-src='{{ post.image_1 }}'/>
+      <h4 class='col-md-4 adjContent'>
+        <a href='/posts/{{ post._id }}'>
+         {{ post.title }}
+        </a>
+      </h4>
+      <p class='col-md-4 adjContent'>
+         Created By: {{ post.author }}
+      </p>
+      <p class='col-md-4 adjContent'>
+         {{ post.synopsis }}
+      </p>
+      <p class='col-md-4 adjContent'>
+         {{ post.created_at | date:'medium' }}
+      </p>
+      <a type="button"
+         class="btn btn-warning adjTopMargin"
+         ng-href="/posts/{{ $ctrl.singlePost._id }}/edit">
+         Edit
+      </a>
+    </div>
 </div>
