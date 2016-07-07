@@ -4,39 +4,56 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var filePicked = null;
+
 (function () {
   var CreateComponent = function () {
-    function CreateComponent($scope, $http, $location, Auth, filepickerService) {
+    function CreateComponent($scope, $http, $location, Auth) {
       _classCallCheck(this, CreateComponent);
 
       this.$http = $http;
+      this.$scope = $scope;
       this.$location = $location;
       this.getCurrentUser = Auth.getCurrentUser;
-      this.filepickerService = filepickerService;
       this.message = 'Wat!';
       this.hiddenfields = true;
+      window.filePicked = this.filePicked;
+      window.$ctrl = this;
+      this.files = [];
     }
 
     _createClass(CreateComponent, [{
+      key: 'filePicked',
+      value: function filePicked(event) {
+        console.log(event);
+        window.$ctrl.imageURL = event.fpfile.url;
+        window.$ctrl.$scope.$apply();
+      }
+    }, {
       key: 'reveal',
       value: function reveal() {
         // return true;
         this.hiddenfields = !this.hiddenfields;
       }
     }, {
+      key: 'uploaded',
+      value: function uploaded(event) {
+        console.log(event);
+        console.log(this.uploaddata);
+      }
+    }, {
       key: 'upload',
       value: function upload() {
         console.log('clicked upload!');
-        this.filepickerService.pick({
+        this.filepicker.pick({
           mimetype: 'image/*',
-          language: 'en',
-          services: ['COMPUTER', 'DROPBOX', 'GOOGLE_DRIVE', 'IMAGE_SEARCH', 'FACEBOOK', 'INSTAGRAM'],
-          openTo: 'IMAGE_SEARCH'
+          container: 'window',
+          services: ['COMPUTER', 'FACEBOOK', 'CLOUDAPP']
         }, function (Blob) {
-          console.log(JSON.stringify(Blob));
-          // this.files.push(Blob);
-          // this.post.image_1 = image;
-          // this.$apply();
+          console.log(replaceHtmlChars(JSON.stringify(Blob)));
+        }, function (FPError) {
+          //print errors to console
+          console.log(FPError.toString());
         });
       }
 
@@ -48,6 +65,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var _this = this;
 
         if (this.post) {
+          console.log(this.imageURL);
           console.log(this.post);
           console.log(this.getCurrentUser().name);
           this.$http.post('/api/posts', {
@@ -55,7 +73,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             title: this.post.title,
             author: this.getCurrentUser().name,
             synopsis: this.post.synopsis,
-            image_1: this.post.image_1,
+            image_1: this.imageURL,
             caption_1: this.post.caption_1,
             image_2: this.post.image_2,
             caption_2: this.post.caption_2,

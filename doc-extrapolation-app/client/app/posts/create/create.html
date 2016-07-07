@@ -3,6 +3,7 @@
 
 {{ $ctrl.message }}
 {{ $ctrl.getCurrentUser().name}}
+{{ $ctrl.files }}
 
 <div class="container">
   <div class="row">
@@ -26,13 +27,21 @@
                placeholder= "Use url for now."
                name="image_1"
                ng-model='$ctrl.post.image_1' /><br /><br />
-               
+
       <!-- code below is for filepicker  -->
-       <!-- <div class="text-center">
-          <button type="button" class="btn btn-default" ng-click="$ctrl.upload()">
-              Upload <span class="caret"></span>
+       <div class="text-center">
+          <button type="button"
+                  class="btn btn-default"    ng-click="$ctrl.upload()">
+                  Upload
+                  <span class="caret"></span>
           </button>
-       </div>     -->
+          <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+          <input type="filepicker" data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz" onchange="filePicked(event)"
+     >
+       </div>
+
+       <img ng-src="$ctrl.imageURL" alt="" />
+
 
         <label name="caption">Write caption for screenshot/image.</label>
         <textarea type="text"

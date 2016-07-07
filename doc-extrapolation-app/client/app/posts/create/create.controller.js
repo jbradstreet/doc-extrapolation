@@ -1,14 +1,25 @@
 'use strict';
+var filePicked = null;
+
 (function(){
 
 class CreateComponent {
-  constructor($scope, $http, $location, Auth, filepickerService) {
+  constructor($scope, $http, $location, Auth) {
     this.$http = $http;
+    this.$scope = $scope;
     this.$location = $location;
     this.getCurrentUser = Auth.getCurrentUser;
-    this.filepickerService = filepickerService;
     this.message = 'Wat!';
     this.hiddenfields = true;
+    window.filePicked = this.filePicked;
+    window.$ctrl = this;
+    this.files = [];
+  }
+
+  filePicked(event) {
+    console.log(event);
+    window.$ctrl.imageURL = event.fpfile.url;
+    window.$ctrl.$scope.$apply();
   }
 
   reveal() {
@@ -16,28 +27,33 @@ class CreateComponent {
     this.hiddenfields = !this.hiddenfields;
   }
 
+  uploaded(event) {
+    console.log(event);
+    console.log(this.uploaddata);
+  }
+
   upload() {
     console.log('clicked upload!');
-    this.filepickerService.pick(
+    this.filepicker.pick(
       {
         mimetype: 'image/*',
-        language: 'en',
-        services: ['COMPUTER','DROPBOX','GOOGLE_DRIVE','IMAGE_SEARCH', 'FACEBOOK', 'INSTAGRAM'],
-        openTo: 'IMAGE_SEARCH'
+        container: 'window',
+        services: ['COMPUTER', 'FACEBOOK', 'CLOUDAPP'],
       },
       function(Blob){
-        console.log(JSON.stringify(Blob));
-        // this.files.push(Blob);
-        // this.post.image_1 = image;
-        // this.$apply();
+        console.log(replaceHtmlChars(JSON.stringify(Blob)));
+      },
+      function(FPError){
+        //print errors to console
+        console.log(FPError.toString());
       }
     );
   }
 
-
   // do $http request here. Should automatically use the api endpoint
   submit() {
     if (this.post) {
+      console.log(this.imageURL);
       console.log(this.post);
       console.log(this.getCurrentUser().name);
       this.$http.post('/api/posts', {
@@ -45,7 +61,7 @@ class CreateComponent {
         title: this.post.title,
         author: this.getCurrentUser().name,
         synopsis: this.post.synopsis,
-        image_1: this.post.image_1,
+        image_1: this.imageURL,
         caption_1: this.post.caption_1,
         image_2: this.post.image_2,
         caption_2: this.post.caption_2,
