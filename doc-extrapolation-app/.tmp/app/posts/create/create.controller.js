@@ -31,7 +31,7 @@ var filePicked = null;
       value: function filePicked(event) {
         // console.log(event);
         window.$ctrl.imageURL1 = event.fpfiles[0].url;
-        window.$ctrl.imageURL2 = event.fpfiles[1].url;
+        // window.$ctrl.imageURL2 = event.fpfiles[1].url;
         window.$ctrl.$scope.$apply();
       }
     }, {
