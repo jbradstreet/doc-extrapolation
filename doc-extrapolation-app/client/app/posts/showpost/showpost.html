@@ -13,28 +13,35 @@
       </div>
 
       <div class= "row">
-        <p class='col-md-12 adjContent blue'>
+        <p class='col-md-12'>
           {{ $ctrl.singlePost.synopsis }}
         </p>
-      </div>
+      </div><br />
 
       <div class="row">
-        <img class='col-md-4 resize img-responsive'
+        <img class='col-md-8 col-md-offset-2 img-responsive'
              ng-src='{{ $ctrl.singlePost.image_1 }}'
         />
-        <p class='col-md-8 adjContent'>
-           {{ $ctrl.singlePost.caption_1 }}
+      </div><br />
+
+      <div class="row">
+        <p class='col-md-10 col-md-offset-1'>
+          {{ $ctrl.singlePost.caption_1 }}
         </p>
       </div>
 
       <div class="row">
-        <img class='col-md-4 resize img-responsive'
+        <img class='col-md-8 col-md-offset-2 img-responsive'
              ng-src='{{ $ctrl.singlePost.image_2 }}'
         />
-        <p class='col-md-4 adjContent'>
-           {{ $ctrl.singlePost.caption_2 }}
+      </div><br />
+
+      <div class="row">
+        <p class='col-md-10 col-md-offset-1'>
+          {{ $ctrl.singlePost.caption_2 }}
         </p>
       </div>
+
       <!-- <a type="button"
          class="btn btn-warning adjTopMargin"
          ng-href="/posts/{{ $ctrl.singlePost._id }}/edit">

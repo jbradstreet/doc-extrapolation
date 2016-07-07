@@ -31,7 +31,8 @@
           <script type="text/javascript"
                   src="//api.filestackapi.com/filestack.js"></script>
           <input type="filepicker"
-                 data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz" onchange="filePicked(event)"
+                 data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz"
+                 onchange="filePicked(event)"
                  data-fp-mimetypes="*/*"
                  data-fp-container="modal"
                  >
@@ -68,8 +69,8 @@
                   data-fp-container="modal" >
          </div><br /><br />
 
-        <div class="row">
-          <img class='col-md-3 resize'
+        <div class="row center-block">
+          <img class='col-md-8'
                ng-show="$ctrl.imageURL2"
                ng-src="{{ $ctrl.imageURL2 }}"
                alt="preview of uploaded image" />
