@@ -11,11 +11,13 @@ class CreateComponent {
     this.getCurrentUser = Auth.getCurrentUser;
     this.message = 'Wat!';
     this.hiddenfields = true;
+    // use the window to access the filePicked variable on line 2
     window.filePicked = this.filePicked;
     window.$ctrl = this;
     this.files = [];
   }
 
+// this is how I got the filestack button to open the upload window
   filePicked(event) {
     console.log(event);
     window.$ctrl.imageURL = event.fpfile.url;
@@ -32,23 +34,6 @@ class CreateComponent {
     console.log(this.uploaddata);
   }
 
-  upload() {
-    console.log('clicked upload!');
-    this.filepicker.pick(
-      {
-        mimetype: 'image/*',
-        container: 'window',
-        services: ['COMPUTER', 'FACEBOOK', 'CLOUDAPP'],
-      },
-      function(Blob){
-        console.log(replaceHtmlChars(JSON.stringify(Blob)));
-      },
-      function(FPError){
-        //print errors to console
-        console.log(FPError.toString());
-      }
-    );
-  }
 
   // do $http request here. Should automatically use the api endpoint
   submit() {
