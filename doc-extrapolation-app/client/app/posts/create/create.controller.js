@@ -29,12 +29,6 @@ class CreateComponent {
     this.hiddenfields = !this.hiddenfields;
   }
 
-  uploaded(event) {
-    console.log(event);
-    console.log(this.uploaddata);
-  }
-
-
   // do $http request here. Should automatically use the api endpoint
   submit() {
     if (this.post) {
