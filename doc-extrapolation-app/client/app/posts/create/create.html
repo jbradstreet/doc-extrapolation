@@ -36,7 +36,8 @@
        </div><br /><br />
 
        <img class='col-md-3 resize'
-            ng-src="{{ window.$ctrl.imageURL }}" alt="preview of uploaded image" /><br /><br />
+            ng-src="{{ $ctrl.imageURL1 }}"
+            alt="preview of uploaded image" /><br /><br />
       <!-- end of filestack section  -->
 
         <label name="caption">Write caption for screenshot/image.</label>
@@ -46,16 +47,6 @@
                   rows="3"
                   placeholder="A SHORT caption."
                   ng-model='$ctrl.post.caption_1'/><br /><br />
-
-
-          <label name="caption">Write caption for screenshot/image.</label>
-          <textarea type="text"
-                    name="caption_2"
-                    class="form-control"
-                    rows="3"
-                    placeholder="A SHORT caption."
-                    ng-model='$ctrl.post.caption_2'/><br /><br />
-        </div>
 
         <div ng-hide="$ctrl.hiddenfields">
           <label name="image">Upload your screenshot!</label><br />
