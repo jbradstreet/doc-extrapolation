@@ -22,9 +22,11 @@
                   rows="5"
                   placeholder="A SHORT synopsis. Please."
                   ng-model='$ctrl.post.synopsis'/><br /><br />
+
+        <!-- first img and caption pair -->
         <label name="image">Upload ALL your screenshots!</label><br />
 
-      <!-- code below is for filestack  -->
+       <!-- filestack  -->
        <div>
           <script type="text/javascript"
                   src="//api.filestackapi.com/filestack.js"></script>
@@ -32,7 +34,7 @@
                  data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz" onchange="filePicked(event)"
                  data-fp-mimetypes="*/*"
                  data-fp-container="modal"
-                 data-fp-multiple="true">
+                 >
        </div><br /><br />
 
        <div class="row">
@@ -40,14 +42,8 @@
          ng-show="$ctrl.imageURL1"
          ng-src="{{ $ctrl.imageURL1 }}"
          alt="preview of uploaded image" />
-
-         <!-- <img class='col-md-3 resize'
-         ng-show="$ctrl.imageURL2"
-         ng-src="{{ $ctrl.imageURL2 }}"
-         alt="preview of uploaded image" /> -->
-
        </div><br /><br />
-      <!-- end of filestack section  -->
+      <!-- end of filestack -->
 
         <label name="caption">Write caption for screenshot/image.</label>
         <textarea type="text"
@@ -57,23 +53,27 @@
                   placeholder="A SHORT caption."
                   ng-model='$ctrl.post.caption_1'/><br /><br />
 
+        <!-- end of first img and caption pair -->
+
+        <!-- second img and caption pair -->
         <div ng-hide="$ctrl.hiddenfields">
           <label name="image">Upload your screenshot!</label><br />
-          <!-- <input type="url"
-                 placeholder= "Use url for now."
-                 name="image_2"
-                 ng-model='$ctrl.post.image_2' /><br /><br /> -->
-         <input type="filepicker"
-                data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz" onchange="filePickedAgain(event)"
-                data-fp-mimetypes="*/*"
-                data-fp-container="modal"
-                data-fp-multiple="true">
-        <img class='col-md-3 resize'
-             ng-show="$ctrl.imageURL2"
-             ng-src="{{ $ctrl.imageURL2 }}"
-             alt="preview of uploaded image" />        
 
-          <label name="caption">Write caption for screenshot/image.</label>
+         <div>
+           <input type="filepicker"
+                  data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz" onchange="filePickedAgain(event)"
+                  data-fp-mimetypes="*/*"
+                  data-fp-container="modal" >
+         </div><br /><br />
+
+        <div class="row">
+          <img class='col-md-3 resize'
+               ng-show="$ctrl.imageURL2"
+               ng-src="{{ $ctrl.imageURL2 }}"
+               alt="preview of uploaded image" />
+        </div><br /><br />
+
+        <label name="caption">Write caption for screenshot/image.</label>
           <textarea type="text"
                     name="caption_2"
                     class="form-control"
@@ -81,6 +81,7 @@
                     placeholder="A SHORT caption."
                     ng-model='$ctrl.post.caption_2'/><br /><br />
         </div>
+        <!-- end of second img and caption pair -->
 
         <div ng-hide="$ctrl.hiddenfields">
           <label name="image">Upload your screenshot!</label><br />
