@@ -5,6 +5,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var filePicked = null;
+var filePickedAgain = null;
 
 (function () {
   var CreateComponent = function () {
@@ -19,6 +20,7 @@ var filePicked = null;
       this.hiddenfields = true;
       // use the window to access the filePicked variable on line 2
       window.filePicked = this.filePicked;
+      window.filePickedAgain = this.filePickedAgain;
       window.$ctrl = this;
       this.data = [];
     }
@@ -29,9 +31,17 @@ var filePicked = null;
     _createClass(CreateComponent, [{
       key: 'filePicked',
       value: function filePicked(event) {
-        // console.log(event);
+        // add logic to iterate through array of objects
         window.$ctrl.imageURL1 = event.fpfiles[0].url;
-        window.$ctrl.imageURL2 = event.fpfiles[1].url;
+        // window.$ctrl.imageURL2 = event.fpfiles[1].url;
+        window.$ctrl.$scope.$apply();
+      }
+    }, {
+      key: 'filePickedAgain',
+      value: function filePickedAgain(event) {
+        // add logic to iterate through array of objects
+        window.$ctrl.imageURL2 = event.fpfiles[0].url;
+        // window.$ctrl.imageURL2 = event.fpfiles[1].url;
         window.$ctrl.$scope.$apply();
       }
     }, {
@@ -60,13 +70,7 @@ var filePicked = null;
             image_1: this.imageURL1,
             caption_1: this.post.caption_1,
             image_2: this.imageURL2,
-            caption_2: this.post.caption_2,
-            image_3: this.post.image_3,
-            caption_3: this.post.caption_3,
-            image_4: this.post.image_4,
-            caption_4: this.post.caption_4,
-            image_5: this.post.image_5,
-            caption_5: this.post.caption_5
+            caption_2: this.post.caption_2
           }).then(function (result) {
             _this.$location.path('/posts');
           });
