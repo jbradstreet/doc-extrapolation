@@ -1,32 +1,45 @@
 
 <div class='container'>
-      <div class='row'>
-        <section class='col-md-10 col-md-offset-1 well'>
+  <div class='row'>
+    <section class='col-md-10 col-md-offset-1 well'>
 
-            <p class='col-md-4 adjContent red'>
-              {{ $ctrl.singlePost.title }}
-            </p>
-            <p class='col-md-4 adjContent'>
-              Created By: {{ $ctrl.singlePost.author }}
-            </p>
-            <p class='col-md-4 adjContent blue'>
-              {{ $ctrl.singlePost.synopsis }}
-            </p>
-            <img class='col-md-4 resize img-responsive'
-                 ng-src='{{ $ctrl.singlePost.image_1 }}'
-                 />
-            <img class='col-md-4 resize img-responsive'
-                 ng-src='{{ $ctrl.singlePost.image_2 }}'
-                 />
-            <p class='col-md-4 adjContent'>
-              {{ $ctrl.singlePost.caption_1 }}
-            </p>
-            <p class='col-md-4 adjContent'>
-              {{ $ctrl.singlePost.caption_2 }}
-            </p>
-            <!-- <a type="button"
-               class="btn btn-warning adjTopMargin"
-               ng-href="/posts/{{ $ctrl.singlePost._id }}/edit">
-               Edit
-            </a> -->
+      <div class="row">
+        <p class='col-md-4 adjContent red'>
+          Title: {{ $ctrl.singlePost.title }}
+        </p>
+        <p class='col-md-4 adjContent'>
+          Created By: {{ $ctrl.singlePost.author }}
+        </p>
+      </div>
+
+      <div class= "row">
+        <p class='col-md-12 adjContent blue'>
+          {{ $ctrl.singlePost.synopsis }}
+        </p>
+      </div>
+
+      <div class="row">
+        <img class='col-md-4 resize img-responsive'
+             ng-src='{{ $ctrl.singlePost.image_1 }}'
+        />
+        <p class='col-md-8 adjContent'>
+           {{ $ctrl.singlePost.caption_1 }}
+        </p>
+      </div>
+
+      <div class="row">
+        <img class='col-md-4 resize img-responsive'
+             ng-src='{{ $ctrl.singlePost.image_2 }}'
+        />
+        <p class='col-md-4 adjContent'>
+           {{ $ctrl.singlePost.caption_2 }}
+        </p>
+      </div>
+      <!-- <a type="button"
+         class="btn btn-warning adjTopMargin"
+         ng-href="/posts/{{ $ctrl.singlePost._id }}/edit">
+         Edit
+      </a> -->
+    </section>
+  </div>
 </div>
