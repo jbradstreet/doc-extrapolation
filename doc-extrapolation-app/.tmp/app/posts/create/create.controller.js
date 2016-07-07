@@ -17,16 +17,31 @@ var filePicked = null;
       this.getCurrentUser = Auth.getCurrentUser;
       this.message = 'Wat!';
       this.hiddenfields = true;
+      // use the window to access the filePicked variable on line 2
       window.filePicked = this.filePicked;
       window.$ctrl = this;
       this.files = [];
     }
 
+    // this is how I got the filestack button to open the upload window
+
+
     _createClass(CreateComponent, [{
       key: 'filePicked',
       value: function filePicked(event) {
         console.log(event);
-        window.$ctrl.imageURL = event.fpfile.url;
+        window.$ctrl.imageURL1 = event.fpfiles[0].url;
+        window.$ctrl.imageURL2 = event.fpfiles[1].url;
+        console.log(window.$ctrl.imageURL1);
+        console.log(window.$ctrl.imageURL2);
+        window.$ctrl.$scope.$apply();
+      }
+    }, {
+      key: 'filePicked2',
+      value: function filePicked2(event) {
+        console.log(event);
+        window.$ctrl.imageURL2 = event.fpfile[1].url;
+        console.log(window.$ctrl.imageURL2);
         window.$ctrl.$scope.$apply();
       }
     }, {
@@ -34,27 +49,6 @@ var filePicked = null;
       value: function reveal() {
         // return true;
         this.hiddenfields = !this.hiddenfields;
-      }
-    }, {
-      key: 'uploaded',
-      value: function uploaded(event) {
-        console.log(event);
-        console.log(this.uploaddata);
-      }
-    }, {
-      key: 'upload',
-      value: function upload() {
-        console.log('clicked upload!');
-        this.filepicker.pick({
-          mimetype: 'image/*',
-          container: 'window',
-          services: ['COMPUTER', 'FACEBOOK', 'CLOUDAPP']
-        }, function (Blob) {
-          console.log(replaceHtmlChars(JSON.stringify(Blob)));
-        }, function (FPError) {
-          //print errors to console
-          console.log(FPError.toString());
-        });
       }
 
       // do $http request here. Should automatically use the api endpoint
@@ -73,9 +67,9 @@ var filePicked = null;
             title: this.post.title,
             author: this.getCurrentUser().name,
             synopsis: this.post.synopsis,
-            image_1: this.imageURL,
+            image_1: this.imageURL1,
             caption_1: this.post.caption_1,
-            image_2: this.post.image_2,
+            image_2: this.imageURL2,
             caption_2: this.post.caption_2,
             image_3: this.post.image_3,
             caption_3: this.post.caption_3,

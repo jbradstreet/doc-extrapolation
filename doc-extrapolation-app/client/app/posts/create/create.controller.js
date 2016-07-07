@@ -20,7 +20,17 @@ class CreateComponent {
 // this is how I got the filestack button to open the upload window
   filePicked(event) {
     console.log(event);
-    window.$ctrl.imageURL = event.fpfile.url;
+    window.$ctrl.imageURL1 = event.fpfiles[0].url;
+    window.$ctrl.imageURL2 = event.fpfiles[1].url;
+    console.log(window.$ctrl.imageURL1);
+    console.log(window.$ctrl.imageURL2);
+    window.$ctrl.$scope.$apply();
+  }
+
+  filePicked2(event) {
+    console.log(event);
+    window.$ctrl.imageURL2 = event.fpfile[1].url;
+    console.log(window.$ctrl.imageURL2);
     window.$ctrl.$scope.$apply();
   }
 
@@ -40,9 +50,9 @@ class CreateComponent {
         title: this.post.title,
         author: this.getCurrentUser().name,
         synopsis: this.post.synopsis,
-        image_1: this.imageURL,
+        image_1: this.imageURL1,
         caption_1: this.post.caption_1,
-        image_2: this.post.image_2,
+        image_2: this.imageURL2,
         caption_2: this.post.caption_2,
         image_3: this.post.image_3,
         caption_3: this.post.caption_3,

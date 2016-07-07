@@ -22,26 +22,22 @@
                   rows="5"
                   placeholder="A SHORT synopsis. Please."
                   ng-model='$ctrl.post.synopsis'/><br /><br />
-        <label name="image">Screenshot goes here!</label><br />
-        <input type="url"
-               placeholder= "Use url for now."
-               name="image_1"
-               ng-model='$ctrl.post.image_1' /><br /><br />
+        <label name="image">Upload ALL your screenshots!</label><br />
 
-      <!-- code below is for filepicker  -->
-       <div class="text-center">
-          <button type="button"
-                  class="btn btn-default"    ng-click="$ctrl.upload()">
-                  Upload
-                  <span class="caret"></span>
-          </button>
-          <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
-          <input type="filepicker" data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz" onchange="filePicked(event)"
-     >
-       </div>
+      <!-- code below is for filestack  -->
+       <div>
+          <script type="text/javascript"
+                  src="//api.filestackapi.com/filestack.js"></script>
+          <input type="filepicker"
+                 data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz" onchange="filePicked(event)"
+                 data-fp-mimetypes="*/*"
+                 data-fp-container="modal"
+                 data-fp-multiple="true">
+       </div><br /><br />
 
-       <img ng-src="$ctrl.imageURL" alt="" />
-
+       <img class='col-md-3 resize'
+            ng-src="{{ window.$ctrl.imageURL }}" alt="preview of uploaded image" /><br /><br />
+      <!-- end of filestack section  -->
 
         <label name="caption">Write caption for screenshot/image.</label>
         <textarea type="text"
@@ -52,12 +48,6 @@
                   ng-model='$ctrl.post.caption_1'/><br /><br />
 
 
-        <div ng-hide="$ctrl.hiddenfields">
-          <label name="image">Screenshot goes here!</label><br />
-          <input type="url"
-                 placeholder= "Use url for now."
-                 name="image_2"
-                 ng-model='$ctrl.post.image_2' /><br /><br />
           <label name="caption">Write caption for screenshot/image.</label>
           <textarea type="text"
                     name="caption_2"
@@ -68,7 +58,7 @@
         </div>
 
         <div ng-hide="$ctrl.hiddenfields">
-          <label name="image">Screenshot goes here!</label><br />
+          <label name="image">Upload your screenshot!</label><br />
           <input type="url"
                  placeholder= "Use url for now."
                  name="image_3"
@@ -83,7 +73,7 @@
         </div>
 
         <div ng-hide="$ctrl.hiddenfields">
-          <label name="image">Screenshot goes here!</label><br />
+          <label name="image">Upload your screenshot!</label><br />
           <input type="url"
                  placeholder= "Use url for now."
                  name="image_4"
@@ -98,7 +88,7 @@
         </div>
 
         <div ng-hide="$ctrl.hiddenfields">
-          <label name="image">Screenshot goes here!</label><br />
+          <label name="image">Upload your screenshot!</label><br />
           <input type="url"
                  placeholder= "Use url for now."
                  name="image_5"
