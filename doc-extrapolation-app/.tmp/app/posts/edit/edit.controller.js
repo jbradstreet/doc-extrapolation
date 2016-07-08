@@ -16,8 +16,8 @@ var filePickedAgain = null;
       this.$http = $http;
       this.$routeParams = $routeParams;
       this.$location = $location;
-      this.message = "You made it!";
-      // line 11 has all objects in the array
+      this.message = 'You made it!';
+      // line 15 has all objects in the array
       this.singlePost = [];
       this.hiddenfields = true;
       window.filePicked = this.filePicked;
@@ -68,6 +68,7 @@ var filePickedAgain = null;
 
         if (this.singlePost) {
           var postid = this.$routeParams.postID;
+
           this.$http.put('/api/posts/' + this.$routeParams.postID, {
             title: this.singlePost.title,
             synopsis: this.singlePost.synopsis,
@@ -108,6 +109,7 @@ var filePickedAgain = null;
 
         if (this.singlePost) {
           var postid = this.$routeParams.postID;
+
           this.$http.delete('/api/posts/' + this.$routeParams.postID, {
             title: this.singlePost.title,
             synopsis: this.singlePost.synopsis,
@@ -115,6 +117,7 @@ var filePickedAgain = null;
             caption_1: this.singlePost.caption_1
           }).then(function (result) {
             console.log(result);
+            // add postid at the end of the url, see line 88
             _this3.$location.path('/posts/');
           });
         }

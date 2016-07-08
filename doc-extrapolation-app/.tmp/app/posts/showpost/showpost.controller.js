@@ -12,8 +12,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.$http = $http;
       this.$routeParams = $routeParams;
       this.$location = $location;
-      this.message = "You made it!";
-      // line 9 has all objects in the array
+      this.message = 'You made it!';
+      // line 11 has all objects in the array
       this.singlePost = [];
     }
 

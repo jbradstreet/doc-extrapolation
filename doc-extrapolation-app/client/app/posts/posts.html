@@ -11,16 +11,16 @@
                />
             <h4 class='col-md-4 adjContent'>
               <a href='/posts/{{ post._id }}'>
-                {{ post.title }}
+                 {{ post.title }}
               </a>
             </h4>
             <p class='col-md-4 adjContent'>
-              Created By: {{ post.author }}
+               Created By: {{ post.author }}
             </p>
             <p class='col-md-4 adjContent'>
-              {{ post.synopsis }}
+               {{ post.synopsis }}
             </p>
             <p class='col-md-4 adjContent'>
-              {{ post.created_at | date:'medium' }}
+               Created At: {{ post.created_at | date:'short' }}
             </p>
 </div>

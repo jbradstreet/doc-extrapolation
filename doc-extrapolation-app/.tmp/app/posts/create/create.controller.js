@@ -32,17 +32,13 @@ var filePickedAgain = null;
       key: 'filePicked',
       value: function filePicked(event) {
         console.log(event);
-        // add logic to iterate through array of objects
         window.$ctrl.imageURL1 = event.fpfiles[0].url;
-        // window.$ctrl.imageURL2 = event.fpfiles[1].url;
         window.$ctrl.$scope.$apply();
       }
     }, {
       key: 'filePickedAgain',
       value: function filePickedAgain(event) {
-        // add logic to iterate through array of objects
         window.$ctrl.imageURL2 = event.fpfiles[0].url;
-        // window.$ctrl.imageURL2 = event.fpfiles[1].url;
         window.$ctrl.$scope.$apply();
       }
     }, {
