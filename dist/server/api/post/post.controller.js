@@ -13,6 +13,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.index = index;
+exports.author = author;
 exports.show = show;
 exports.create = create;
 exports.update = update;
@@ -76,6 +77,11 @@ function handleError(res, statusCode) {
 // Gets a list of Posts
 function index(req, res) {
   return _post2.default.find().exec().then(respondWithResult(res)).catch(handleError(res));
+}
+
+// Get an author attached to posts
+function author(req, res) {
+  return _post2.default.find({ author: req.params.author }).exec().then(respondWithResult(res)).catch(handleError(res));
 }
 
 // Gets a single Post from the DB

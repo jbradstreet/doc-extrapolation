@@ -21,6 +21,11 @@ var authTypes = ['github', 'twitter', 'facebook', 'google'];
 
 var UserSchema = new _mongoose.Schema({
   name: String,
+  // cannot get posts data for each author to work
+  posts: [{
+    type: _mongoose2.default.Schema.Types.ObjectId,
+    ref: 'Post'
+  }],
   email: {
     type: String,
     lowercase: true,

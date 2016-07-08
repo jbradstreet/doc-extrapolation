@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var PostSchema = new _mongoose2.default.Schema({
   title: String,
   author: {
-    type: _mongoose2.default.Schema.Types.ObjectId,
+    type: _mongoose2.default.Schema.Types.String,
     ref: 'User'
   },
   synopsis: String,
