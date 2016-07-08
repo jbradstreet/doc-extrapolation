@@ -2,25 +2,42 @@
 <div>For now, this will show any posts that are submitted.</div>
 
 <div class='container'>
-      <div class='row'>
-        <section ng-repeat="post in $ctrl.allPosts"
-                 class='col-md-10 col-md-offset-1 well adjContent'>
+  <div class='row'>
+    <div class='col-xs-3'>
+      <label>Sort by...</label>
+      <select class='form-control'
+              ng-model='$ctrl.sortBy'>
+        <option value='' selected disabled>Please select an option</option>
+        <option value='title'>Title</option>
+        <option value='author'>Author</option>
+        <option value='created_at'>Date Published - Earliest</option>
+        <option value='-created_at'>Date Published - Latest</option>
+      </select>
+    </div>
+  </div>
+</div>
 
-          <img class='col-md-3 resize'
-               ng-src='{{ post.image_1 }}'
-               />
-            <h4 class='col-md-4 adjContent'>
-              <a href='/posts/{{ post._id }}'>
-                 {{ post.title }}
-              </a>
-            </h4>
-            <p class='col-md-4 adjContent'>
-               Created By: {{ post.author }}
-            </p>
-            <p class='col-md-4 adjContent'>
-               {{ post.synopsis }}
-            </p>
-            <p class='col-md-4 adjContent'>
-               Created At: {{ post.created_at | date:'short' }}
-            </p>
+
+<div class='container'>
+  <div class='row'>
+    <section ng-repeat="post in $ctrl.allPosts | orderBy: $ctrl.sortBy"
+             class='col-md-10 col-md-offset-1 well adjContent'>
+
+      <img class='col-md-3 resize'
+           ng-src='{{ post.image_1 }}'
+           />
+        <h4 class='col-md-4 adjContent'>
+          <a href='/posts/{{ post._id }}'>
+             {{ post.title }}
+          </a>
+        </h4>
+        <p class='col-md-4 adjContent'>
+           Created By: {{ post.author }}
+        </p>
+        <p class='col-md-4 adjContent'>
+           {{ post.synopsis }}
+        </p>
+        <p class='col-md-4 adjContent'>
+           Created At: {{ post.created_at | date:'short' }}
+        </p>
 </div>

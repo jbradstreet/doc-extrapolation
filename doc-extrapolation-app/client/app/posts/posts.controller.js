@@ -6,6 +6,7 @@ class PostsComponent {
     this.message = 'Hello';
     this.$http = $http;
     this.allPosts = [];
+    this.sortBy = '';
   }
 
   $onInit() {
