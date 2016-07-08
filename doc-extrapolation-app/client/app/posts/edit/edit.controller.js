@@ -1,8 +1,12 @@
 'use strict';
+var filePicked = null;
+var filePickedAgain = null;
+
 (function(){
 
 class EditComponent {
-  constructor($http, $routeParams, $location) {
+  constructor($scope, $http, $routeParams, $location) {
+    this.$scope = $scope;
     this.$http = $http;
     this.$routeParams = $routeParams;
     this.$location = $location;
@@ -10,6 +14,9 @@ class EditComponent {
     // line 11 has all objects in the array
     this.singlePost = [];
     this.hiddenfields = true;
+    window.filePicked = this.filePicked;
+    window.filePickedAgain = this.filePickedAgain;
+    window.$ctrl = this;
   }
 
   $onInit() {
@@ -19,6 +26,17 @@ class EditComponent {
         console.log(this.singlePost);
       });
   }
+
+  filePicked(event) {
+    window.$ctrl.imageURL1 = event.fpfiles[0].url;
+    window.$ctrl.$scope.$apply();
+  }
+
+  filePickedAgain(event) {
+    window.$ctrl.imageURL2 = event.fpfiles[0].url;
+    window.$ctrl.$scope.$apply();
+  }
+
 
   reveal(){
     this.hiddenfields = !this.hiddenfields;
@@ -38,9 +56,9 @@ class EditComponent {
       this.$http.put('/api/posts/' + this.$routeParams.postID, {
         title: this.singlePost.title,
         synopsis: this.singlePost.synopsis,
-        image_1: this.singlePost.image_1,
+        image_1: this.imageURL1,
         caption_1: this.singlePost.caption_1,
-        image_2: this.singlePost.image_2,
+        image_2: this.imageURL2,
         caption_2: this.singlePost.caption_2,
         image_3: this.singlePost.image_3,
         caption_3: this.singlePost.caption_3,

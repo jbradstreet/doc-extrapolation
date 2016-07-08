@@ -1,1 +1,1 @@
-{"version":3,"sources":["create.css"],"names":[],"mappings":"AAAA,cAAc,eAAe,CAAC","file":"app/posts/create/create.css","sourcesContent":[".adjTopMargin{margin-top:10px}"],"sourceRoot":"/source/"}
+{"version":3,"sources":["create.css"],"names":[],"mappings":"AAAA,cAAc,eAAe,CAAC,SAAS,aAAa,YAAY,eAAe,CAAC","file":"app/posts/create/create.css","sourcesContent":[".adjTopMargin{margin-top:10px}.adjSize{height:500px;width:300px;margin-top:25px}"],"sourceRoot":"/source/"}

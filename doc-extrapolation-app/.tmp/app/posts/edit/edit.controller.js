@@ -4,11 +4,15 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var filePicked = null;
+var filePickedAgain = null;
+
 (function () {
   var EditComponent = function () {
-    function EditComponent($http, $routeParams, $location) {
+    function EditComponent($scope, $http, $routeParams, $location) {
       _classCallCheck(this, EditComponent);
 
+      this.$scope = $scope;
       this.$http = $http;
       this.$routeParams = $routeParams;
       this.$location = $location;
@@ -16,6 +20,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       // line 11 has all objects in the array
       this.singlePost = [];
       this.hiddenfields = true;
+      window.filePicked = this.filePicked;
+      window.filePickedAgain = this.filePickedAgain;
+      window.$ctrl = this;
     }
 
     _createClass(EditComponent, [{
@@ -27,6 +34,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _this.singlePost = response.data;
           console.log(_this.singlePost);
         });
+      }
+    }, {
+      key: 'filePicked',
+      value: function filePicked(event) {
+        window.$ctrl.imageURL1 = event.fpfiles[0].url;
+        window.$ctrl.$scope.$apply();
+      }
+    }, {
+      key: 'filePickedAgain',
+      value: function filePickedAgain(event) {
+        window.$ctrl.imageURL2 = event.fpfiles[0].url;
+        window.$ctrl.$scope.$apply();
       }
     }, {
       key: 'reveal',
@@ -52,9 +71,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.$http.put('/api/posts/' + this.$routeParams.postID, {
             title: this.singlePost.title,
             synopsis: this.singlePost.synopsis,
-            image_1: this.singlePost.image_1,
+            image_1: this.imageURL1,
             caption_1: this.singlePost.caption_1,
-            image_2: this.singlePost.image_2,
+            image_2: this.imageURL2,
             caption_2: this.singlePost.caption_2,
             image_3: this.singlePost.image_3,
             caption_3: this.singlePost.caption_3,
