@@ -137,7 +137,7 @@
       <a type="button"
          class="btn btn-danger adjTopMargin"
          ng-click="$ctrl.delete()"
-         href="/posts/">
+         href="/posts/author/{{ $ctrl.getCurrentUser().name}}">
          Delete
       </a>
     </form>

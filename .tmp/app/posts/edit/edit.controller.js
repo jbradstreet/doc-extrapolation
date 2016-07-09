@@ -10,13 +10,14 @@ var filePickedThree = null;
 
 (function () {
   var EditComponent = function () {
-    function EditComponent($scope, $http, $routeParams, $location) {
+    function EditComponent($scope, $http, $routeParams, $location, Auth) {
       _classCallCheck(this, EditComponent);
 
       this.$scope = $scope;
       this.$http = $http;
       this.$routeParams = $routeParams;
       this.$location = $location;
+      this.getCurrentUser = Auth.getCurrentUser;
       this.message = 'You made it!';
       // line 15 has all objects in the array
       this.singlePost = [];
@@ -125,8 +126,7 @@ var filePickedThree = null;
             caption_1: this.singlePost.caption_1
           }).then(function (result) {
             console.log(result);
-            // add postid at the end of the url, see line 88
-            _this3.$location.path('/posts/');
+            _this3.$location.path('/posts/author/' + _this3.getCurrentUser().name);
           });
         }
       }
