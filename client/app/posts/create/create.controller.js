@@ -15,7 +15,7 @@ class CreateComponent {
     this.getCurrentUser = Auth.getCurrentUser;
     this.message = 'Wat!';
     this.hiddenfields = true;
-    // use the window to access the filePicked variable on line 2
+    // use the window to access the filePicked variables starting on line 2
     window.filePicked = this.filePicked;
     window.filePickedTwo = this.filePickedTwo;
     window.filePickedThree = this.filePickedThree;
