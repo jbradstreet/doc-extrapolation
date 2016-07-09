@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"app/posts/author/author.css","sourceRoot":"/source/","sourcesContent":[]}
+{"version":3,"sources":["author.css"],"names":[],"mappings":"AAAA,YAAY,iBAAiB,iBAAiB,CAAC,QAAQ,aAAa,YAAY,eAAe,CAAC","file":"app/posts/author/author.css","sourcesContent":[".adjContent{margin-top:-10px;margin-bottom:5px}.resize{height:150px;width:200px;margin-top:25px}"],"sourceRoot":"/source/"}
