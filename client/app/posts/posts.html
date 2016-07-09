@@ -29,18 +29,26 @@
       <img class='col-md-3 resize'
            ng-src='{{ post.image_1 }}'
            />
-        <h4 class='col-md-4 adjContent'>
+
+      <div class="col-md-4 adjContent">
+        <h4>
           <a href='/posts/{{ post._id }}'>
-             {{ post.title }}
+            {{ post.title }}
           </a>
         </h4>
-        <p class='col-md-4 adjContent'>
-           Created By: {{ post.author }}
+        <p>
+          Created By: {{ post.author }}
         </p>
+        <p>
+          Created On: {{ post.created_at | date:'short' }}
+        </p>
+      </div>
+
         <p class='col-md-4 adjContent'>
+           <u>Intro</u>
+        </p>
+        <p class='col-md-4'>
            {{ post.synopsis }}
         </p>
-        <p class='col-md-4 adjContent'>
-           Created On: {{ post.created_at | date:'short' }}
-        </p>
+  </div>
 </div>
