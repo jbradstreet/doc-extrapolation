@@ -19,7 +19,7 @@
                   rows="5"
                   placeholder="A SHORT synopsis. Please."
                   ng-model='$ctrl.singlePost.synopsis'/><br /><br />
-        <label name="image">Screenshot goes here!</label><br />
+        <label name="image">URL of current screenshot! Clear if you want to delete it.</label><br />
         <input type="url"
                placeholder= "Use url for now."
                name="image_1"
@@ -29,6 +29,7 @@
         <div>
           <script type="text/javascript"
                   src="//api.filestackapi.com/filestack.js"></script>
+          <label name="image">Click this to choose a new image.</label><br />
           <input type="filepicker"
                  data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz"
                  onchange="filePicked(event)"
@@ -53,13 +54,14 @@
                   ng-model='$ctrl.singlePost.caption_1'/><br /><br />
 
         <div>
-          <label name="image">Screenshot goes here!</label><br />
+          <label name="image">URL of current screenshot! Clear if you want to delete it.</label><br />
           <input type="url"
                  placeholder= "Use url for now."
                  name="image_2"
                  ng-model='$ctrl.singlePost.image_2' /><br /><br />
 
           <div>
+            <label name="image">Click this to choose a new image.</label><br />
             <input type="filepicker"
                    data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz"
                    onchange="filePickedTwo(event)"
@@ -87,11 +89,29 @@
 
         <!-- might have to remove the ng-hide. Makes entire field go away during editing process! -->
         <div ng-hide="$ctrl.hiddenfields">
-          <label name="image">Screenshot goes here!</label><br />
+          <label name="image">URL of current screenshot! Clear if you want to delete it.</label><br />
           <input type="url"
                  placeholder= "Use url for now."
                  name="image_3"
                  ng-model='$ctrl.post.image_3' /><br /><br />
+
+          <div>
+            <label name="image">Click this to choose a new image.</label><br />
+            <input type="filepicker"
+                  data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz"
+                  onchange="filePickedThree(event)"
+                  data-fp-mimetypes="*/*"
+                  data-fp-container="modal"
+                 >
+          </div><br /><br />
+
+          <div class="row center-block">
+            <img class='col-md-8'
+                 ng-show="$ctrl.imageURL3"
+                 ng-src="{{ $ctrl.imageURL3 }}"
+                 alt="preview of uploaded image" />
+          </div><br /><br />
+
           <label name="caption">Write caption for screenshot/image.</label>
           <textarea type="text"
                     name="caption_3"

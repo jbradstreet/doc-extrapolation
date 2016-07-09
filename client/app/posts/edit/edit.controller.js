@@ -1,6 +1,7 @@
 'use strict';
 var filePicked = null;
 var filePickedTwo = null;
+var filePickedThree = null;
 
 (function(){
 
@@ -16,6 +17,7 @@ class EditComponent {
     this.hiddenfields = true;
     window.filePicked = this.filePicked;
     window.filePickedTwo = this.filePickedTwo;
+    window.filePickedThree = this.filePickedThree;
     window.$ctrl = this;
   }
 
@@ -37,6 +39,10 @@ class EditComponent {
     window.$ctrl.$scope.$apply();
   }
 
+  filePickedThree(event) {
+    window.$ctrl.imageURL3 = event.fpfiles[0].url;
+    window.$ctrl.$scope.$apply();
+  }
 
   reveal(){
     this.hiddenfields = !this.hiddenfields;
@@ -61,12 +67,12 @@ class EditComponent {
         caption_1: this.singlePost.caption_1,
         image_2: this.imageURL2,
         caption_2: this.singlePost.caption_2,
-        image_3: this.singlePost.image_3,
-        caption_3: this.singlePost.caption_3,
-        image_4: this.singlePost.image_4,
-        caption_4: this.singlePost.caption_4,
-        image_5: this.singlePost.image_5,
-        caption_5: this.singlePost.caption_5
+        image_3: this.imageURL3,
+        caption_3: this.singlePost.caption_3
+        // image_4: this.singlePost.image_4,
+        // caption_4: this.singlePost.caption_4,
+        // image_5: this.singlePost.image_5,
+        // caption_5: this.singlePost.caption_5
       })
       .then((result) => {
         console.log(result);
@@ -74,14 +80,14 @@ class EditComponent {
       });
     } else if (!this.singlePost) {
       this.$http.post('api/posts/' + this.$routeParams.postID, {
-        image_2: this.singlePost.image_2,
+        image_2: this.imageURL2,
         caption_2: this.singlePost.caption_2,
-        image_3: this.singlePost.image_3,
-        caption_3: this.singlePost.caption_3,
-        image_4: this.singlePost.image_4,
-        caption_4: this.singlePost.caption_4,
-        image_5: this.singlePost.image_5,
-        caption_5: this.singlePost.caption_5
+        image_3: this.imageURL3,
+        caption_3: this.singlePost.caption_3
+        // image_4: this.singlePost.image_4,
+        // caption_4: this.singlePost.caption_4,
+        // image_5: this.singlePost.image_5,
+        // caption_5: this.singlePost.caption_5
       })
       .then((result) => {
         console.log(result);

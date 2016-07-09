@@ -6,6 +6,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var filePicked = null;
 var filePickedTwo = null;
+var filePickedThree = null;
 
 (function () {
   var EditComponent = function () {
@@ -22,6 +23,7 @@ var filePickedTwo = null;
       this.hiddenfields = true;
       window.filePicked = this.filePicked;
       window.filePickedTwo = this.filePickedTwo;
+      window.filePickedThree = this.filePickedThree;
       window.$ctrl = this;
     }
 
@@ -45,6 +47,12 @@ var filePickedTwo = null;
       key: 'filePickedTwo',
       value: function filePickedTwo(event) {
         window.$ctrl.imageURL2 = event.fpfiles[0].url;
+        window.$ctrl.$scope.$apply();
+      }
+    }, {
+      key: 'filePickedThree',
+      value: function filePickedThree(event) {
+        window.$ctrl.imageURL3 = event.fpfiles[0].url;
         window.$ctrl.$scope.$apply();
       }
     }, {
@@ -76,26 +84,26 @@ var filePickedTwo = null;
             caption_1: this.singlePost.caption_1,
             image_2: this.imageURL2,
             caption_2: this.singlePost.caption_2,
-            image_3: this.singlePost.image_3,
-            caption_3: this.singlePost.caption_3,
-            image_4: this.singlePost.image_4,
-            caption_4: this.singlePost.caption_4,
-            image_5: this.singlePost.image_5,
-            caption_5: this.singlePost.caption_5
+            image_3: this.imageURL3,
+            caption_3: this.singlePost.caption_3
+            // image_4: this.singlePost.image_4,
+            // caption_4: this.singlePost.caption_4,
+            // image_5: this.singlePost.image_5,
+            // caption_5: this.singlePost.caption_5
           }).then(function (result) {
             console.log(result);
             _this2.$location.path('/posts/' + postid);
           });
         } else if (!this.singlePost) {
           this.$http.post('api/posts/' + this.$routeParams.postID, {
-            image_2: this.singlePost.image_2,
+            image_2: this.imageURL2,
             caption_2: this.singlePost.caption_2,
-            image_3: this.singlePost.image_3,
-            caption_3: this.singlePost.caption_3,
-            image_4: this.singlePost.image_4,
-            caption_4: this.singlePost.caption_4,
-            image_5: this.singlePost.image_5,
-            caption_5: this.singlePost.caption_5
+            image_3: this.imageURL3,
+            caption_3: this.singlePost.caption_3
+            // image_4: this.singlePost.image_4,
+            // caption_4: this.singlePost.caption_4,
+            // image_5: this.singlePost.image_5,
+            // caption_5: this.singlePost.caption_5
           }).then(function (result) {
             console.log(result);
             _this2.$location.path('/posts/' + postid);
