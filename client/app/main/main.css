@@ -35,13 +35,15 @@ text-shadow: rgb(227, 227, 227) 4px 4px 4px;
   letter-spacing: -1px;
 }
 
-#banner2 {
-  border-bottom: none;
-  margin-top: 100px;
-}
-
 #middleBanner {
   background: #e3e3e3;
+  height: 300px;
+}
+
+#bottomBanner {
+  border-bottom: none;
+  /*margin-top: 100px;*/
+  background:#c9c9c9;
   height: 300px;
 }
 
