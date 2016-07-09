@@ -80,7 +80,7 @@ class CreateComponent {
         caption_5: this.post.caption_5
       })
       .then((result) => {
-        this.$location.path('/posts');
+        this.$location.path('/posts/author/' + this.getCurrentUser().name);
       });
       this.post.title = '';
     }

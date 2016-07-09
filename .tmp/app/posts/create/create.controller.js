@@ -99,7 +99,7 @@ var filePickedFive = null;
             image_5: this.post.imageURL5,
             caption_5: this.post.caption_5
           }).then(function (result) {
-            _this.$location.path('/posts');
+            _this.$location.path('/posts/author/' + _this.getCurrentUser().name);
           });
           this.post.title = '';
         }
