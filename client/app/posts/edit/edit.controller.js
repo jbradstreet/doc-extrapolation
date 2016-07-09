@@ -1,6 +1,6 @@
 'use strict';
 var filePicked = null;
-var filePickedAgain = null;
+var filePickedTwo = null;
 
 (function(){
 
@@ -15,7 +15,7 @@ class EditComponent {
     this.singlePost = [];
     this.hiddenfields = true;
     window.filePicked = this.filePicked;
-    window.filePickedAgain = this.filePickedAgain;
+    window.filePickedTwo = this.filePickedTwo;
     window.$ctrl = this;
   }
 
@@ -32,7 +32,7 @@ class EditComponent {
     window.$ctrl.$scope.$apply();
   }
 
-  filePickedAgain(event) {
+  filePickedTwo(event) {
     window.$ctrl.imageURL2 = event.fpfiles[0].url;
     window.$ctrl.$scope.$apply();
   }
