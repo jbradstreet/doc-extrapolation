@@ -1,9 +1,3 @@
-<h3>This is the create posts view.</h3>
-
-{{ $ctrl.message }}
-{{ $ctrl.getCurrentUser().name}}
-{{ $ctrl.files }}
-
 <div class="container">
   <div class="row">
     <form name="post_form"
@@ -59,19 +53,19 @@
         <div ng-hide="$ctrl.hiddenfields">
           <label name="image">Upload your screenshot!</label><br />
 
-         <div>
-           <input type="filepicker"
-                  data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz" onchange="filePickedAgain(event)"
-                  data-fp-mimetypes="*/*"
-                  data-fp-container="modal" >
-         </div><br /><br />
+          <div>
+             <input type="filepicker"
+                    data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz" onchange="filePickedTwo(event)"
+                    data-fp-mimetypes="*/*"
+                    data-fp-container="modal" >
+          </div><br /><br />
 
-        <div class="row center-block">
-          <img class='col-md-8'
-               ng-show="$ctrl.imageURL2"
-               ng-src="{{ $ctrl.imageURL2 }}"
-               alt="preview of uploaded image" />
-        </div><br /><br />
+          <div class="row center-block">
+            <img class='col-md-8'
+                 ng-show="$ctrl.imageURL2"
+                 ng-src="{{ $ctrl.imageURL2 }}"
+                 alt="preview of uploaded image" />
+          </div><br /><br />
 
         <label name="caption">Write caption for screenshot/image.</label>
           <textarea type="text"
@@ -83,12 +77,23 @@
         </div>
         <!-- end of second img and caption pair -->
 
+        <!-- third img and caption pair -->
         <div ng-hide="$ctrl.hiddenfields">
           <label name="image">Upload your screenshot!</label><br />
-          <input type="url"
-                 placeholder= "Use url for now."
-                 name="image_3"
-                 ng-model='$ctrl.post.image_3' /><br /><br />
+
+          <div>
+            <input type="filepicker"
+                   data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz" onchange="filePickedThree(event)"
+                   data-fp-mimetypes="*/*"
+                   data-fp-container="modal" >
+          </div><br /><br />
+           <div class="row center-block">
+             <img class='col-md-8'
+                  ng-show="$ctrl.imageURL3"
+                  ng-src="{{ $ctrl.imageURL3 }}"
+                  alt="preview of uploaded image" />
+           </div><br /><br />
+
           <label name="caption">Write caption for screenshot/image.</label>
           <textarea type="text"
                     name="caption_3"
@@ -97,13 +102,25 @@
                     placeholder="A SHORT caption."
                     ng-model='$ctrl.post.caption_3'/><br /><br />
         </div>
+        <!-- end of third img and caption pair -->
 
+        <!-- fourth img and caption pair -->
         <div ng-hide="$ctrl.hiddenfields">
           <label name="image">Upload your screenshot!</label><br />
-          <input type="url"
-                 placeholder= "Use url for now."
-                 name="image_4"
-                 ng-model='$ctrl.post.image_4' /><br /><br />
+
+          <div>
+            <input type="filepicker"
+                   data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz" onchange="filePickedFour(event)"
+                   data-fp-mimetypes="*/*"
+                   data-fp-container="modal" >
+          </div><br /><br />
+           <div class="row center-block">
+             <img class='col-md-8'
+                  ng-show="$ctrl.imageURL4"
+                  ng-src="{{ $ctrl.imageURL4 }}"
+                  alt="preview of uploaded image" />
+           </div><br /><br />
+
           <label name="caption">Write caption for screenshot/image.</label>
           <textarea type="text"
                     name="caption_4"
@@ -112,13 +129,25 @@
                     placeholder="A SHORT caption."
                     ng-model='$ctrl.post.caption_4'/><br /><br />
         </div>
+        <!-- end of fourth img and caption pair -->
 
+        <!-- fifth img and caption pair -->
         <div ng-hide="$ctrl.hiddenfields">
           <label name="image">Upload your screenshot!</label><br />
-          <input type="url"
-                 placeholder= "Use url for now."
-                 name="image_5"
-                 ng-model='$ctrl.post.image_5' /><br /><br />
+
+          <div>
+            <input type="filepicker"
+                   data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz" onchange="filePickedFive(event)"
+                   data-fp-mimetypes="*/*"
+                   data-fp-container="modal" >
+          </div><br /><br />
+           <div class="row center-block">
+             <img class='col-md-8'
+                  ng-show="$ctrl.imageURL5"
+                  ng-src="{{ $ctrl.imageURL5 }}"
+                  alt="preview of uploaded image" />
+           </div><br /><br />
+
           <label name="caption">Write caption for screenshot/image.</label>
           <textarea type="text"
                     name="caption_5"
@@ -127,6 +156,7 @@
                     placeholder="A SHORT caption."
                     ng-model='$ctrl.post.caption_5'/><br /><br />
         </div>
+        <!-- end of fifth img and caption pair -->
 
         <button type="submit"
                 class="btn btn-primary adjTopMargin"

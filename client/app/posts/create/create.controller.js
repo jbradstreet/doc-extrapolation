@@ -1,6 +1,9 @@
 'use strict';
 var filePicked = null;
-var filePickedAgain = null;
+var filePickedTwo = null;
+var filePickedThree = null;
+var filePickedFour = null;
+var filePickedFive = null;
 
 (function(){
 
@@ -14,7 +17,10 @@ class CreateComponent {
     this.hiddenfields = true;
     // use the window to access the filePicked variable on line 2
     window.filePicked = this.filePicked;
-    window.filePickedAgain = this.filePickedAgain;
+    window.filePickedTwo = this.filePickedTwo;
+    window.filePickedThree = this.filePickedThree;
+    window.filePickedFour = this.filePickedFour;
+    window.filePickedFive = this.filePickedFive;
     window.$ctrl = this;
     this.data = [];
   }
@@ -26,8 +32,23 @@ class CreateComponent {
     window.$ctrl.$scope.$apply();
   }
 
-  filePickedAgain(event) {
+  filePickedTwo(event) {
     window.$ctrl.imageURL2 = event.fpfiles[0].url;
+    window.$ctrl.$scope.$apply();
+  }
+
+  filePickedThree(event) {
+    window.$ctrl.imageURL3 = event.fpfiles[0].url;
+    window.$ctrl.$scope.$apply();
+  }
+
+  filePickedFour(event) {
+    window.$ctrl.imageURL4 = event.fpfiles[0].url;
+    window.$ctrl.$scope.$apply();
+  }
+
+  filePickedFive(event) {
+    window.$ctrl.imageURL5 = event.fpfiles[0].url;
     window.$ctrl.$scope.$apply();
   }
 
@@ -51,12 +72,12 @@ class CreateComponent {
         caption_1: this.post.caption_1,
         image_2: this.imageURL2,
         caption_2: this.post.caption_2,
-        // image_3: this.post.image_3,
-        // caption_3: this.post.caption_3,
-        // image_4: this.post.image_4,
-        // caption_4: this.post.caption_4,
-        // image_5: this.post.image_5,
-        // caption_5: this.post.caption_5
+        image_3: this.post.imageURL3,
+        caption_3: this.post.caption_3,
+        image_4: this.post.imageURL4,
+        caption_4: this.post.caption_4,
+        image_5: this.post.imageURL5,
+        caption_5: this.post.caption_5
       })
       .then((result) => {
         this.$location.path('/posts');

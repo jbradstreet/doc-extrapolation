@@ -5,7 +5,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var filePicked = null;
-var filePickedAgain = null;
+var filePickedTwo = null;
+var filePickedThree = null;
+var filePickedFour = null;
+var filePickedFive = null;
 
 (function () {
   var CreateComponent = function () {
@@ -20,7 +23,10 @@ var filePickedAgain = null;
       this.hiddenfields = true;
       // use the window to access the filePicked variable on line 2
       window.filePicked = this.filePicked;
-      window.filePickedAgain = this.filePickedAgain;
+      window.filePickedTwo = this.filePickedTwo;
+      window.filePickedThree = this.filePickedThree;
+      window.filePickedFour = this.filePickedFour;
+      window.filePickedFive = this.filePickedFive;
       window.$ctrl = this;
       this.data = [];
     }
@@ -36,9 +42,27 @@ var filePickedAgain = null;
         window.$ctrl.$scope.$apply();
       }
     }, {
-      key: 'filePickedAgain',
-      value: function filePickedAgain(event) {
+      key: 'filePickedTwo',
+      value: function filePickedTwo(event) {
         window.$ctrl.imageURL2 = event.fpfiles[0].url;
+        window.$ctrl.$scope.$apply();
+      }
+    }, {
+      key: 'filePickedThree',
+      value: function filePickedThree(event) {
+        window.$ctrl.imageURL3 = event.fpfiles[0].url;
+        window.$ctrl.$scope.$apply();
+      }
+    }, {
+      key: 'filePickedFour',
+      value: function filePickedFour(event) {
+        window.$ctrl.imageURL4 = event.fpfiles[0].url;
+        window.$ctrl.$scope.$apply();
+      }
+    }, {
+      key: 'filePickedFive',
+      value: function filePickedFive(event) {
+        window.$ctrl.imageURL5 = event.fpfiles[0].url;
         window.$ctrl.$scope.$apply();
       }
     }, {
@@ -67,7 +91,13 @@ var filePickedAgain = null;
             image_1: this.imageURL1,
             caption_1: this.post.caption_1,
             image_2: this.imageURL2,
-            caption_2: this.post.caption_2
+            caption_2: this.post.caption_2,
+            image_3: this.post.imageURL3,
+            caption_3: this.post.caption_3,
+            image_4: this.post.imageURL4,
+            caption_4: this.post.caption_4,
+            image_5: this.post.imageURL5,
+            caption_5: this.post.caption_5
           }).then(function (result) {
             _this.$location.path('/posts');
           });
