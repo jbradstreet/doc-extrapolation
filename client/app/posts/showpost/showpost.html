@@ -4,11 +4,13 @@
     <section class='col-md-10 col-md-offset-1 well'>
 
       <div class="row">
-        <p class='col-md-4 adjContent red'>
-          Title: {{ $ctrl.singlePost.title }}
-        </p>
-        <p class='col-md-4 adjContent'>
-          Created By: {{ $ctrl.singlePost.author }}
+        <h2 class='col-md-12'>
+          {{ $ctrl.singlePost.title }}
+        </h2>
+      </div>
+      <div class="row">
+        <p class='lead col-md-4'>
+          By: {{ $ctrl.singlePost.author }}
         </p>
       </div>
 
