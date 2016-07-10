@@ -33,11 +33,13 @@ class CreateComponent {
   }
 
   filePickedTwo(event) {
+    console.log(event);
     window.$ctrl.imageURL2 = event.fpfiles[0].url;
     window.$ctrl.$scope.$apply();
   }
 
   filePickedThree(event) {
+    console.log(event);
     window.$ctrl.imageURL3 = event.fpfiles[0].url;
     window.$ctrl.$scope.$apply();
   }
@@ -72,11 +74,11 @@ class CreateComponent {
         caption_1: this.post.caption_1,
         image_2: this.imageURL2,
         caption_2: this.post.caption_2,
-        image_3: this.post.imageURL3,
+        image_3: this.imageURL3,
         caption_3: this.post.caption_3,
-        image_4: this.post.imageURL4,
+        image_4: this.imageURL4,
         caption_4: this.post.caption_4,
-        image_5: this.post.imageURL5,
+        image_5: this.imageURL5,
         caption_5: this.post.caption_5
       })
       .then((result) => {
