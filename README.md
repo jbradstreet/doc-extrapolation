@@ -1,4 +1,4 @@
-# doc-extrapolation
+# Documentation Extrapolation
 
 While navigating through blogs, stack overflow posts, and official documentation, I found that a lot of these sites will list steps from A - Z without mentioning every step along the way. Not only is this frustrating, but also time consuming as you end up spending hours researching those missing steps. 
 
