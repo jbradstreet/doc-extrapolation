@@ -31,7 +31,7 @@
                   src="//api.filestackapi.com/filestack.js"></script>
           <label name="image">Click this to choose a new image.</label><br />
           <input type="filepicker"
-                 data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz"
+                 data-fp-apikey="Ag1dCd9vNR966DYsKdIdAz"
                  onchange="filePicked(event)"
                  data-fp-mimetypes="*/*"
                  data-fp-container="modal" />
@@ -61,7 +61,7 @@
           <div>
             <label name="image">Click this to choose a new image.</label><br />
             <input type="filepicker"
-                   data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz"
+                   data-fp-apikey="Ag1dCd9vNR966DYsKdIdAz"
                    onchange="filePickedTwo(event)"
                    data-fp-mimetypes="*/*"
                    data-fp-container="modal" />
@@ -83,30 +83,27 @@
         <!-- end of second img and caption pair -->
 
         <!-- removed ng-hide, for now. Makes entire field go away during editing process! -->
+        <!-- third img and caption pair -->
         <div>
           <label name="image">URL of current screenshot! Clear if you want to delete it.</label><br />
           <input type="url"
                  placeholder= "Use url for now."
                  name="image_3"
                  ng-model='$ctrl.singlePost.image_3' /><br /><br />
-
           <div>
             <label name="image">Click this to choose a new image.</label><br />
             <input type="filepicker"
-                  data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz"
+                  data-fp-apikey="Ag1dCd9vNR966DYsKdIdAz"
                   onchange="filePickedThree(event)"
                   data-fp-mimetypes="*/*"
-                  data-fp-container="modal"
-                 >
+                  data-fp-container="modal" />
           </div><br /><br />
-
           <div class="row center-block">
             <img class='col-md-8'
                  ng-show="$ctrl.imageURL3"
                  ng-src="{{ $ctrl.imageURL3 }}"
                  alt="preview of uploaded image" />
           </div><br /><br />
-
           <label name="caption">Write caption for screenshot/image.</label>
           <textarea type="text"
                     name="caption_3"
@@ -115,31 +112,29 @@
                     placeholder="A SHORT caption."
                     ng-model='$ctrl.singlePost.caption_3'/><br /><br />
         </div>
+        <!-- end of third img and caption pair -->
 
+        <!-- fourth img and caption pair -->
         <div>
           <label name="image">URL of current screenshot! Clear if you want to delete it.</label><br />
           <input type="url"
                  placeholder= "Use url for now."
                  name="image_4"
                  ng-model='$ctrl.singlePost.image_4' /><br /><br />
-
           <div>
             <label name="image">Click this to choose a new image.</label><br />
             <input type="filepicker"
-                  data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz"
+                  data-fp-apikey="Ag1dCd9vNR966DYsKdIdAz"
                   onchange="filePickedFour(event)"
                   data-fp-mimetypes="*/*"
-                  data-fp-container="modal"
-                 >
+                  data-fp-container="modal" />
           </div><br /><br />
-
           <div class="row center-block">
             <img class='col-md-8'
                  ng-show="$ctrl.imageURL4"
                  ng-src="{{ $ctrl.imageURL4 }}"
                  alt="preview of uploaded image" />
           </div><br /><br />
-
           <label name="caption">Write caption for screenshot/image.</label>
           <textarea type="text"
                     name="caption_4"
@@ -148,31 +143,29 @@
                     placeholder="A SHORT caption."
                     ng-model='$ctrl.singlePost.caption_4'/><br /><br />
         </div>
+        <!-- end of fourth img and caption pair -->
 
+        <!-- fifth img and caption pair -->
         <div>
           <label name="image">URL of current screenshot! Clear if you want to delete it.</label><br />
           <input type="url"
                  placeholder= "Use url for now."
                  name="image_5"
                  ng-model='$ctrl.singlePost.image_5' /><br /><br />
-
           <div>
             <label name="image">Click this to choose a new image.</label><br />
             <input type="filepicker"
-                  data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz"
+                  data-fp-apikey="Ag1dCd9vNR966DYsKdIdAz"
                   onchange="filePickedFive(event)"
                   data-fp-mimetypes="*/*"
-                  data-fp-container="modal"
-                 >
+                  data-fp-container="modal" />
           </div><br /><br />
-
           <div class="row center-block">
             <img class='col-md-8'
                  ng-show="$ctrl.imageURL5"
                  ng-src="{{ $ctrl.imageURL5 }}"
                  alt="preview of uploaded image" />
           </div><br /><br />
-
           <label name="caption">Write caption for screenshot/image.</label>
           <textarea type="text"
                     name="caption_5"
@@ -181,8 +174,7 @@
                     placeholder="A SHORT caption."
                     ng-model='$ctrl.singlePost.caption_5'/><br /><br />
         </div>
-
-
+        <!-- end of fifth img and caption pair -->
       </fieldset>
       <!-- <button type="submit"
               class="btn btn-primary adjTopMargin"
