@@ -83,7 +83,7 @@ class EditComponent {
         image_2: this.imageURL2,
         caption_2: this.singlePost.caption_2,
         image_3: this.imageURL3,
-        caption_3: this.singlePost.caption_3
+        caption_3: this.singlePost.caption_3,
         image_4: this.imageURL4,
         caption_4: this.singlePost.caption_4,
         image_5: this.imageURL5,
@@ -98,7 +98,7 @@ class EditComponent {
         image_2: this.imageURL2,
         caption_2: this.singlePost.caption_2,
         image_3: this.imageURL3,
-        caption_3: this.singlePost.caption_3
+        caption_3: this.singlePost.caption_3,
         image_4: this.imageURL4,
         caption_4: this.singlePost.caption_4,
         image_5: this.imageURL5,
