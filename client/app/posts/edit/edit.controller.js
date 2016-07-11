@@ -15,15 +15,15 @@ class EditComponent {
     this.$location = $location;
     this.getCurrentUser = Auth.getCurrentUser;
     this.message = 'You made it!';
-    // line 15 has all objects in the array
+    // line 19 has all objects in the array
     this.singlePost = [];
-    this.hiddenfields = true;
     window.filePicked = this.filePicked;
     window.filePickedTwo = this.filePickedTwo;
     window.filePickedThree = this.filePickedThree;
     window.filePickedFour = this.filePickedFour;
     window.filePickedFive = this.filePickedFive;
     window.$ctrl = this;
+    // this.hiddenfields = true;
   }
 
   $onInit() {
@@ -63,13 +63,13 @@ class EditComponent {
     this.hiddenfields = !this.hiddenfields;
   }
 
-  hideextra() {
-    if (!this.singlePost.image_2) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  // hideextra() {
+  //   if (!this.singlePost.image_2) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
   update() {
     if (this.singlePost) {
@@ -99,10 +99,10 @@ class EditComponent {
         caption_2: this.singlePost.caption_2,
         image_3: this.imageURL3,
         caption_3: this.singlePost.caption_3
-        // image_4: this.singlePost.image_4,
-        // caption_4: this.singlePost.caption_4,
-        // image_5: this.singlePost.image_5,
-        // caption_5: this.singlePost.caption_5
+        image_4: this.imageURL4,
+        caption_4: this.singlePost.caption_4,
+        image_5: this.imageURL5,
+        caption_5: this.singlePost.caption_5
       })
       .then((result) => {
         console.log(result);
@@ -118,8 +118,16 @@ class EditComponent {
       this.$http.delete('/api/posts/' + this.$routeParams.postID, {
         title: this.singlePost.title,
         synopsis: this.singlePost.synopsis,
-        image_1: this.singlePost.image_1,
-        caption_1: this.singlePost.caption_1
+        image_1: this.imageURL1,
+        caption_1: this.singlePost.caption_1,
+        // image_2: this.imageURL2,
+        // caption_2: this.singlePost.caption_2,
+        // image_3: this.imageURL3,
+        // caption_3: this.singlePost.caption_3
+        // image_4: this.imageURL4,
+        // caption_4: this.singlePost.caption_4,
+        // image_5: this.imageURL5,
+        // caption_5: this.singlePost.caption_5
       })
       .then((result) => {
         console.log(result);

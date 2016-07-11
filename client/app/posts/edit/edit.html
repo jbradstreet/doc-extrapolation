@@ -19,13 +19,13 @@
                   rows="5"
                   placeholder="A SHORT synopsis. Please."
                   ng-model='$ctrl.singlePost.synopsis'/><br /><br />
+
+        <!-- first img and caption pair -->
         <label name="image">URL of current screenshot! Clear if you want to delete it.</label><br />
         <input type="url"
                placeholder= "Use url for now."
                name="image_1"
                ng-model='$ctrl.singlePost.image_1' /><br /><br />
-
-        <!-- filestack  -->
         <div>
           <script type="text/javascript"
                   src="//api.filestackapi.com/filestack.js"></script>
@@ -34,17 +34,14 @@
                  data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz"
                  onchange="filePicked(event)"
                  data-fp-mimetypes="*/*"
-                 data-fp-container="modal"
-                 >
+                 data-fp-container="modal" />
         </div><br /><br />
-
         <div class="row center-block">
           <img class='col-md-8'
                ng-show="$ctrl.imageURL1"
                ng-src="{{ $ctrl.imageURL1 }}"
                alt="preview of uploaded image" />
         </div><br /><br />
-
         <label name="caption">Write caption for screenshot/image.</label>
         <textarea type="text"
                   name="caption_1"
@@ -52,32 +49,29 @@
                   rows="3"
                   placeholder="A SHORT caption."
                   ng-model='$ctrl.singlePost.caption_1'/><br /><br />
+        <!-- end of first img and caption pair -->
 
+        <!-- second img and caption pair -->
         <div>
           <label name="image">URL of current screenshot! Clear if you want to delete it.</label><br />
           <input type="url"
                  placeholder= "Use url for now."
                  name="image_2"
                  ng-model='$ctrl.singlePost.image_2' /><br /><br />
-
           <div>
             <label name="image">Click this to choose a new image.</label><br />
             <input type="filepicker"
                    data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz"
                    onchange="filePickedTwo(event)"
                    data-fp-mimetypes="*/*"
-                   data-fp-container="modal"
-                  >
+                   data-fp-container="modal" />
           </div><br /><br />
-
            <div class="row center-block">
              <img class='col-md-8'
                   ng-show="$ctrl.imageURL2"
                   ng-src="{{ $ctrl.imageURL2 }}"
                   alt="preview of uploaded image" />
            </div><br /><br />
-
-
           <label name="caption">Write caption for screenshot/image.</label>
           <textarea type="text"
                     name="caption_2"
@@ -86,14 +80,15 @@
                     placeholder="A SHORT caption."
                     ng-model='$ctrl.singlePost.caption_2'/><br /><br />
         </div>
+        <!-- end of second img and caption pair -->
 
-        <!-- might have to remove the ng-hide. Makes entire field go away during editing process! -->
-        <div ng-hide="$ctrl.hiddenfields">
+        <!-- removed ng-hide, for now. Makes entire field go away during editing process! -->
+        <div>
           <label name="image">URL of current screenshot! Clear if you want to delete it.</label><br />
           <input type="url"
                  placeholder= "Use url for now."
                  name="image_3"
-                 ng-model='$ctrl.post.image_3' /><br /><br />
+                 ng-model='$ctrl.singlePost.image_3' /><br /><br />
 
           <div>
             <label name="image">Click this to choose a new image.</label><br />
@@ -118,15 +113,15 @@
                     class="form-control"
                     rows="3"
                     placeholder="A SHORT caption."
-                    ng-model='$ctrl.post.caption_3'/><br /><br />
+                    ng-model='$ctrl.singlePost.caption_3'/><br /><br />
         </div>
 
-        <div ng-hide="$ctrl.hiddenfields">
+        <div>
           <label name="image">URL of current screenshot! Clear if you want to delete it.</label><br />
           <input type="url"
                  placeholder= "Use url for now."
                  name="image_4"
-                 ng-model='$ctrl.post.image_4' /><br /><br />
+                 ng-model='$ctrl.singlePost.image_4' /><br /><br />
 
           <div>
             <label name="image">Click this to choose a new image.</label><br />
@@ -151,15 +146,15 @@
                     class="form-control"
                     rows="3"
                     placeholder="A SHORT caption."
-                    ng-model='$ctrl.post.caption_4'/><br /><br />
+                    ng-model='$ctrl.singlePost.caption_4'/><br /><br />
         </div>
 
-        <div ng-hide="$ctrl.hiddenfields">
+        <div>
           <label name="image">URL of current screenshot! Clear if you want to delete it.</label><br />
           <input type="url"
                  placeholder= "Use url for now."
                  name="image_5"
-                 ng-model='$ctrl.post.image_5' /><br /><br />
+                 ng-model='$ctrl.singlePost.image_5' /><br /><br />
 
           <div>
             <label name="image">Click this to choose a new image.</label><br />
@@ -184,22 +179,22 @@
                     class="form-control"
                     rows="3"
                     placeholder="A SHORT caption."
-                    ng-model='$ctrl.post.caption_5'/><br /><br />
+                    ng-model='$ctrl.singlePost.caption_5'/><br /><br />
         </div>
 
 
       </fieldset>
-      <button type="submit"
+      <!-- <button type="submit"
               class="btn btn-primary adjTopMargin"
               ng-click="$ctrl.reveal()"
               >
               Give Me More Fields
-      </button>
+      </button> -->
       <a type="button"
          class="btn btn-success adjTopMargin"
          ng-click="$ctrl.update()"
          ng-href="/posts">
-         Submit
+         Update
       </a>
       <a type="button"
          class="btn btn-danger adjTopMargin"
