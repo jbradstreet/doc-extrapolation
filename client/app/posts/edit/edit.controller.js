@@ -59,9 +59,9 @@ class EditComponent {
     window.$ctrl.$scope.$apply();
   }
 
-  reveal(){
-    this.hiddenfields = !this.hiddenfields;
-  }
+  // reveal(){
+  //   this.hiddenfields = !this.hiddenfields;
+  // }
 
   // hideextra() {
   //   if (!this.singlePost.image_2) {
