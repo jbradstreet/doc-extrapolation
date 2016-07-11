@@ -57,6 +57,18 @@ var filePickedThree = null;
         window.$ctrl.$scope.$apply();
       }
     }, {
+      key: 'filePickedFour',
+      value: function filePickedFour(event) {
+        window.$ctrl.imageURL4 = event.fpfiles[0].url;
+        window.$ctrl.$scope.$apply();
+      }
+    }, {
+      key: 'filePickedFive',
+      value: function filePickedFive(event) {
+        window.$ctrl.imageURL3 = event.fpfiles[0].url;
+        window.$ctrl.$scope.$apply();
+      }
+    }, {
       key: 'reveal',
       value: function reveal() {
         this.hiddenfields = !this.hiddenfields;

@@ -121,6 +121,73 @@
                     ng-model='$ctrl.post.caption_3'/><br /><br />
         </div>
 
+        <div ng-hide="$ctrl.hiddenfields">
+          <label name="image">URL of current screenshot! Clear if you want to delete it.</label><br />
+          <input type="url"
+                 placeholder= "Use url for now."
+                 name="image_4"
+                 ng-model='$ctrl.post.image_4' /><br /><br />
+
+          <div>
+            <label name="image">Click this to choose a new image.</label><br />
+            <input type="filepicker"
+                  data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz"
+                  onchange="filePickedFour(event)"
+                  data-fp-mimetypes="*/*"
+                  data-fp-container="modal"
+                 >
+          </div><br /><br />
+
+          <div class="row center-block">
+            <img class='col-md-8'
+                 ng-show="$ctrl.imageURL4"
+                 ng-src="{{ $ctrl.imageURL4 }}"
+                 alt="preview of uploaded image" />
+          </div><br /><br />
+
+          <label name="caption">Write caption for screenshot/image.</label>
+          <textarea type="text"
+                    name="caption_4"
+                    class="form-control"
+                    rows="3"
+                    placeholder="A SHORT caption."
+                    ng-model='$ctrl.post.caption_4'/><br /><br />
+        </div>
+
+        <div ng-hide="$ctrl.hiddenfields">
+          <label name="image">URL of current screenshot! Clear if you want to delete it.</label><br />
+          <input type="url"
+                 placeholder= "Use url for now."
+                 name="image_5"
+                 ng-model='$ctrl.post.image_5' /><br /><br />
+
+          <div>
+            <label name="image">Click this to choose a new image.</label><br />
+            <input type="filepicker"
+                  data-fp-apikey="AjhGHe86aRlGvhu7k6IBjz"
+                  onchange="filePickedFive(event)"
+                  data-fp-mimetypes="*/*"
+                  data-fp-container="modal"
+                 >
+          </div><br /><br />
+
+          <div class="row center-block">
+            <img class='col-md-8'
+                 ng-show="$ctrl.imageURL5"
+                 ng-src="{{ $ctrl.imageURL5 }}"
+                 alt="preview of uploaded image" />
+          </div><br /><br />
+
+          <label name="caption">Write caption for screenshot/image.</label>
+          <textarea type="text"
+                    name="caption_5"
+                    class="form-control"
+                    rows="3"
+                    placeholder="A SHORT caption."
+                    ng-model='$ctrl.post.caption_5'/><br /><br />
+        </div>
+
+
       </fieldset>
       <button type="submit"
               class="btn btn-primary adjTopMargin"

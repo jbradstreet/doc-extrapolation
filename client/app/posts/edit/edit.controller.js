@@ -2,6 +2,8 @@
 var filePicked = null;
 var filePickedTwo = null;
 var filePickedThree = null;
+var filePickedFour = null;
+var filePickedFive = null;
 
 (function(){
 
@@ -19,6 +21,8 @@ class EditComponent {
     window.filePicked = this.filePicked;
     window.filePickedTwo = this.filePickedTwo;
     window.filePickedThree = this.filePickedThree;
+    window.filePickedFour = this.filePickedFour;
+    window.filePickedFive = this.filePickedFive;
     window.$ctrl = this;
   }
 
@@ -42,6 +46,16 @@ class EditComponent {
 
   filePickedThree(event) {
     window.$ctrl.imageURL3 = event.fpfiles[0].url;
+    window.$ctrl.$scope.$apply();
+  }
+
+  filePickedFour(event) {
+    window.$ctrl.imageURL4 = event.fpfiles[0].url;
+    window.$ctrl.$scope.$apply();
+  }
+
+  filePickedFive(event) {
+    window.$ctrl.imageURL5 = event.fpfiles[0].url;
     window.$ctrl.$scope.$apply();
   }
 
@@ -70,10 +84,10 @@ class EditComponent {
         caption_2: this.singlePost.caption_2,
         image_3: this.imageURL3,
         caption_3: this.singlePost.caption_3
-        // image_4: this.singlePost.image_4,
-        // caption_4: this.singlePost.caption_4,
-        // image_5: this.singlePost.image_5,
-        // caption_5: this.singlePost.caption_5
+        image_4: this.imageURL4,
+        caption_4: this.singlePost.caption_4,
+        image_5: this.imageURL5,
+        caption_5: this.singlePost.caption_5
       })
       .then((result) => {
         console.log(result);
